@@ -516,14 +516,14 @@ code {
 }
 
 .article-shell {
-  width: min(1200px, calc(100vw - 32px));
+  width: min(1280px, calc(100vw - 32px));
   margin: 0 auto;
   padding: 72px 0 96px;
 }
 
 .article-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 250px) minmax(0, 1fr) minmax(220px, 250px);
+  grid-template-columns: 150px minmax(0, 1fr) 190px;
   gap: 28px;
   align-items: start;
 }
@@ -774,7 +774,7 @@ code {
   }
 
   .article-layout {
-    grid-template-columns: 1fr minmax(220px, 250px);
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 220px);
   }
 
   .article-sidebar--left {
