@@ -2,6 +2,26 @@
 
 一个适合直接部署到 GitHub Pages 的个人博客，现已改成 **Jekyll + Markdown 发文**，并支持 **草稿 -> 手动发布**。
 
+## 在线发布
+
+如果你想直接在 GitHub 网页发文，现在已经支持这种方式。
+
+最简单的入口：
+
+- 打开仓库 [https://github.com/YMZ1998/YMZ1998.github.io](https://github.com/YMZ1998/YMZ1998.github.io)
+- 进入 `_posts` 目录在线创建文章
+- 模板文件：`D:\code\YMZ1998.github.io\POST_TEMPLATE.md:1`
+- 在线发文说明：`D:\code\YMZ1998.github.io\ONLINE_PUBLISH.md:1`
+
+推荐流程：
+
+1. 在 GitHub 网页打开 `_posts`
+2. 新建 `YYYY-MM-DD-title.md`
+3. 复制 `POST_TEMPLATE.md` 内容
+4. 填好标题、摘要、正文
+5. 点击 `Commit changes`
+6. 等 GitHub Pages 自动发布
+
 ## 日常发文流程
 
 ### 方式 1：先写草稿，再手动发布
@@ -113,6 +133,8 @@ GitHub Pages 会自动构建并发布，首页会自动显示新文章。
 - `_layouts/post.html`：文章页布局
 - `_drafts/`：草稿目录
 - `_posts/`：Markdown 文章目录
+- `POST_TEMPLATE.md`：在线发文模板
+- `ONLINE_PUBLISH.md`：GitHub 网页发文说明
 - `index.html`：首页，会自动读取文章列表
 - `tools/new-post.ps1`：新建草稿或直接发布文章
 - `tools/publish-post.ps1`：把草稿手动发布到 `_posts`
