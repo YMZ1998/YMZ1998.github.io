@@ -7,18 +7,14 @@ permalink: /photography/
 <main class="page-main">
   <section class="section muted-section">
     <div class="container">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">Photography Column</span>
-          <h1>摄影</h1>
-          <p class="section-copy">摄影内容单独成页，按分页浏览，不再和文章或项目内容混在一起。</p>
-        </div>
-        <div class="photo-pagination-controls" aria-label="摄影作品分页">
-          <button class="photo-page-button" type="button" data-photo-prev aria-label="上一页">← 上一页</button>
-          <span class="photo-page-status" data-photo-status>第 1 / 1 页</span>
-          <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
-        </div>
+      {% capture photo_controls %}
+      <div class="photo-pagination-controls" aria-label="摄影作品分页">
+        <button class="photo-page-button" type="button" data-photo-prev aria-label="上一页">← 上一页</button>
+        <span class="photo-page-status" data-photo-status>第 1 / 1 页</span>
+        <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
       </div>
+      {% endcapture %}
+      {% include section-heading.html level="h1" eyebrow="Photography Column" title="摄影" copy="摄影内容单独成页，按分页浏览，不再和文章或项目内容混在一起。" controls=photo_controls %}
 
       <div class="photo-grid" data-photo-gallery>
         {% for work in site.data.photography %}

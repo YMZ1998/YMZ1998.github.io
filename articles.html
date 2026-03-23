@@ -7,22 +7,18 @@ permalink: /articles/
 <main class="page-main">
   <section class="section">
     <div class="container">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">Project Notes</span>
-          <h1>文章</h1>
-          <p class="section-copy">这里集中放项目记录、实验笔记和相对完整的技术整理。</p>
-        </div>
-        <div class="filters" role="tablist" aria-label="文章筛选">
-          <button class="filter is-active" type="button" data-filter="all">全部</button>
-          {% assign topics = site.posts | map: "topic" | uniq %}
-          {% for topic in topics %}
-          {% if topic %}
-          <button class="filter" type="button" data-filter="{{ topic }}">{{ topic }}</button>
-          {% endif %}
-          {% endfor %}
-        </div>
+      {% capture article_filters %}
+      <div class="filters" role="tablist" aria-label="文章筛选">
+        <button class="filter is-active" type="button" data-filter="all">全部</button>
+        {% assign topics = site.posts | map: "topic" | uniq %}
+        {% for topic in topics %}
+        {% if topic %}
+        <button class="filter" type="button" data-filter="{{ topic }}">{{ topic }}</button>
+        {% endif %}
+        {% endfor %}
       </div>
+      {% endcapture %}
+      {% include section-heading.html level="h1" eyebrow="Project Notes" title="文章" copy="这里集中放项目记录、实验笔记和相对完整的技术整理。" controls=article_filters %}
 
       <div class="post-grid">
         {% for post in site.posts %}

@@ -1,0 +1,14 @@
+<div class="section-heading">
+  <div>
+    <span class="eyebrow">{{ include.eyebrow }}</span>
+    {% if include.level == "h1" %}
+    <h1>{{ include.title }}</h1>
+    {% else %}
+    <h2>{{ include.title }}</h2>
+    {% endif %}
+    <p class="section-copy">{{ include.copy }}</p>
+  </div>
+  {% if include.controls %}
+  {{ include.controls }}
+  {% endif %}
+</div>

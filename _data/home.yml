@@ -1,0 +1,38 @@
+hero:
+  eyebrow: Medical Imaging · Photography · Engineering
+  title: 一个把项目、文章和照片分开整理的个人站点
+  description: 这里不再把所有内容堆在首页，而是按用途拆开：文章页专门放技术记录，摄影页专门整理作品，项目页集中展示长期维护的仓库和方向。首页只保留一个简单入口，方便直接去你真正想看的部分。
+  primary:
+    label: 进入文章页
+    url: /articles/
+  secondary:
+    label: 进入摄影页
+    url: /photography/
+panel:
+  label: 首页说明
+  title: 首页只做导航，不再承担全部内容展示
+  description: 如果你想看最近写的技术内容，就去文章页；如果是看摄影作品，就去摄影页；如果想快速了解我在做什么项目，就直接去项目页。
+  bullets:
+    - 文章、摄影、项目分开管理
+    - 减少首页冗长滚动
+    - 后续内容更新会更清晰
+sections_intro:
+  eyebrow: Sections
+  title: 内容入口
+  description: 按内容类型分别进入，不同板块不再混在同一个页面里。
+sections:
+  - tag: Articles
+    title: 文章页
+    description: 集中放技术记录、实验笔记和教程，不再和摄影或项目介绍混排在一起。
+    url: /articles/
+    cta: 查看文章 →
+  - tag: Photography
+    title: 摄影页
+    description: 摄影作品单独成页，支持分页浏览，后面继续补图时也不会影响文章页结构。
+    url: /photography/
+    cta: 查看摄影 →
+  - tag: Projects
+    title: 项目页
+    description: 长期维护的项目、仓库链接和方向说明集中放在一个页面，首页只保留入口。
+    url: /projects/
+    cta: 查看项目 →

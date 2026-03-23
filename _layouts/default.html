@@ -21,11 +21,7 @@
       </a>
 
       <div class="site-actions">
-        <nav class="site-nav" data-site-nav aria-label="主导航">
-          <a href="{{ '/articles/' | relative_url }}">文章</a>
-          <a href="{{ '/photography/' | relative_url }}">摄影</a>
-          <a href="{{ '/projects/' | relative_url }}">项目</a>
-        </nav>
+        {% include site-nav.html %}
 
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换主题">
           <span class="theme-toggle-icon">🌙</span>
