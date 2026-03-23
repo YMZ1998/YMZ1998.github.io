@@ -8,26 +8,6 @@ layout: default
     </div>
 
     <div class="article-layout">
-      <aside class="article-sidebar article-sidebar--left card">
-        <section class="article-sidebar-section article-sidebar-section--timeline">
-          <p class="article-sidebar-title">时间轴切换</p>
-          <nav class="article-timeline" aria-label="文章时间轴">
-            {% assign timeline_year = "" %}
-            {% for post in site.posts %}
-            {% assign post_year = post.date | date: "%Y" %}
-            {% if post_year != timeline_year %}
-            <p class="article-timeline-year">{{ post_year }}</p>
-            {% assign timeline_year = post_year %}
-            {% endif %}
-            <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
-              <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
-              <span class="article-timeline-text">{{ post.title }}</span>
-            </a>
-            {% endfor %}
-          </nav>
-        </section>
-      </aside>
-
       <div class="article-main">
         <header class="article-header">
           {% if page.topic %}
@@ -82,9 +62,29 @@ layout: default
         </nav>
       </div>
 
-      <aside class="article-sidebar article-sidebar--right card" data-article-toc-section hidden>
-        <p class="article-sidebar-title">快速选择</p>
-        <nav class="article-toc" data-article-toc aria-label="文章目录"></nav>
+      <aside class="article-sidebar article-sidebar--right card">
+        <section class="article-sidebar-section" data-article-toc-section hidden>
+          <p class="article-sidebar-title">快速选择</p>
+          <nav class="article-toc" data-article-toc aria-label="文章目录"></nav>
+        </section>
+
+        <section class="article-sidebar-section article-sidebar-section--timeline">
+          <p class="article-sidebar-title">时间轴切换</p>
+          <nav class="article-timeline" aria-label="文章时间轴">
+            {% assign timeline_year = "" %}
+            {% for post in site.posts %}
+            {% assign post_year = post.date | date: "%Y" %}
+            {% if post_year != timeline_year %}
+            <p class="article-timeline-year">{{ post_year }}</p>
+            {% assign timeline_year = post_year %}
+            {% endif %}
+            <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
+              <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
+              <span class="article-timeline-text">{{ post.title }}</span>
+            </a>
+            {% endfor %}
+          </nav>
+        </section>
       </aside>
     </div>
   </section>
