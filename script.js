@@ -115,10 +115,10 @@ function setCurrentYear() {
 
 function setupArticleToc() {
   const article = document.querySelector(".article-content");
-  const tocSection = document.querySelector("[data-article-toc-section]");
-  const toc = document.querySelector("[data-article-toc]");
+  const tocSections = Array.from(document.querySelectorAll("[data-article-toc-section]"));
+  const tocContainers = Array.from(document.querySelectorAll("[data-article-toc]"));
 
-  if (!article || !tocSection || !toc) {
+  if (!article || !tocSections.length || !tocContainers.length) {
     return;
   }
 
@@ -127,6 +127,10 @@ function setupArticleToc() {
   if (!headings.length) {
     return;
   }
+
+  tocContainers.forEach((toc) => {
+    toc.innerHTML = "";
+  });
 
   const usedIds = new Set();
 
@@ -143,16 +147,20 @@ function setupArticleToc() {
 
     usedIds.add(heading.id);
 
-    const link = document.createElement("a");
-    link.href = `#${heading.id}`;
-    link.textContent = heading.textContent.trim();
-    link.dataset.level = heading.tagName === "H2" ? "2" : "3";
-    toc.appendChild(link);
+    tocContainers.forEach((toc) => {
+      const link = document.createElement("a");
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent.trim();
+      link.dataset.level = heading.tagName === "H2" ? "2" : "3";
+      toc.appendChild(link);
+    });
   });
 
-  tocSection.hidden = false;
+  tocSections.forEach((section) => {
+    section.hidden = false;
+  });
 
-  const links = Array.from(toc.querySelectorAll("a"));
+  const links = Array.from(document.querySelectorAll("[data-article-toc] a"));
 
   const updateActiveLink = () => {
     const offset = 140;

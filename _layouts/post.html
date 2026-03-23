@@ -45,23 +45,30 @@ layout: default
           </div>
         </header>
 
-        <section class="article-timeline-mobile card" aria-label="文章时间轴">
-          <p class="article-sidebar-title">时间轴切换</p>
-          <nav class="article-timeline article-timeline--mobile">
-            {% assign mobile_timeline_year = "" %}
-            {% for post in site.posts %}
-            {% assign mobile_post_year = post.date | date: "%Y" %}
-            {% if mobile_post_year != mobile_timeline_year %}
-            <p class="article-timeline-year">{{ mobile_post_year }}</p>
-            {% assign mobile_timeline_year = mobile_post_year %}
-            {% endif %}
-            <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
-              <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
-              <span class="article-timeline-text">{{ post.title }}</span>
-            </a>
-            {% endfor %}
-          </nav>
-        </section>
+        <div class="article-mobile-panels">
+          <section class="article-toc-mobile card" data-article-toc-section hidden>
+            <p class="article-sidebar-title">快速选择</p>
+            <nav class="article-toc article-toc--mobile" data-article-toc aria-label="文章目录"></nav>
+          </section>
+
+          <section class="article-timeline-mobile card" aria-label="文章时间轴">
+            <p class="article-sidebar-title">时间轴切换</p>
+            <nav class="article-timeline article-timeline--mobile">
+              {% assign mobile_timeline_year = "" %}
+              {% for post in site.posts %}
+              {% assign mobile_post_year = post.date | date: "%Y" %}
+              {% if mobile_post_year != mobile_timeline_year %}
+              <p class="article-timeline-year">{{ mobile_post_year }}</p>
+              {% assign mobile_timeline_year = mobile_post_year %}
+              {% endif %}
+              <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
+                <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
+                <span class="article-timeline-text">{{ post.title }}</span>
+              </a>
+              {% endfor %}
+            </nav>
+          </section>
+        </div>
 
         <article class="article-content">
           {{ content }}
