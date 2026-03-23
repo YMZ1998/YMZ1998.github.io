@@ -1,35 +1,36 @@
 ---
 layout: default
 title: YMZ Blog | 个人博客
-description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
+description: YMZ 的个人博客，记录开发实践、AI 工作流、学习笔记与长期主义生活方式。
 ---
 <main>
   <section class="hero section">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">GitHub Pages · Markdown · 响应式</span>
-        <h1>你好，我是 YMZ。<br>这里是我的个人博客。</h1>
+        <span class="eyebrow">Developer · AI Builder · Lifelong Learner</span>
+        <h1>你好，我是 YMZ。</h1>
         <p class="hero-lead">
-          我会在这里记录编程实践、AI 工具、效率方法，以及生活里值得被认真写下来的瞬间。
+          我关注前端开发、AI 工作流、知识管理和长期主义生活方式。
+          这个博客用来记录真实项目经验、可复用的方法，以及值得长期沉淀的思考。
         </p>
 
         <div class="hero-actions">
-          <a class="button primary" href="#posts">开始阅读</a>
-          <a class="button ghost" href="#contact">联系我</a>
+          <a class="button primary" href="#posts">阅读最新文章</a>
+          <a class="button ghost" href="#about">了解我在写什么</a>
         </div>
 
         <ul class="hero-stats" aria-label="站点亮点">
           <li>
             <strong>{{ site.posts | size }}</strong>
-            <span>Markdown 文章</span>
+            <span>已发布文章</span>
+          </li>
+          <li>
+            <strong>Markdown</strong>
+            <span>在线写作与发布</span>
           </li>
           <li>
             <strong>GitHub Pages</strong>
-            <span>自动发布</span>
-          </li>
-          <li>
-            <strong>Light / Dark</strong>
-            <span>主题切换</span>
+            <span>自动部署</span>
           </li>
         </ul>
       </div>
@@ -38,19 +39,50 @@ description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
         <div class="profile-badge">
           <div class="avatar" aria-hidden="true">YMZ</div>
           <div>
-            <p class="panel-label">写作方式</p>
-            <h2>现在支持 Markdown 发文</h2>
+            <p class="panel-label">目前重点</p>
+            <h2>把想法变成可复用的系统</h2>
           </div>
         </div>
         <p class="panel-text">
-          以后可以先在 <code>_drafts</code> 写草稿，再用脚本一键发布到 <code>_posts</code>。推送后首页会自动展示，GitHub 也支持手动触发部署。
+          我更喜欢那些能长期复利的工作：搭建工作流、优化信息结构、把零散灵感整理成真正能重复使用的知识和产品。
         </p>
         <ul class="check-list">
-          <li>文章页由 Jekyll 自动生成</li>
-          <li>首页自动读取最新文章列表</li>
-          <li>支持草稿与手动发布</li>
+          <li>写真实项目里的经验，而不是空泛总结</li>
+          <li>关注 AI 在日常工作中的落地方式</li>
+          <li>持续积累长期有价值的写作内容</li>
         </ul>
       </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Featured Topics</span>
+          <h2>我主要写这些内容</h2>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <article class="card project-card">
+          <h3>开发实践</h3>
+          <p>记录前端工程、静态站点、个人工具和项目搭建过程中的经验、取舍与踩坑总结。</p>
+          <span class="project-status">强调可复用</span>
+        </article>
+
+        <article class="card project-card">
+          <h3>AI 工作流</h3>
+          <p>关注生成式 AI 如何真正进入日常流程，包括写作、编程、整理资料和辅助决策。</p>
+          <span class="project-status">强调真实落地</span>
+        </article>
+
+        <article class="card project-card">
+          <h3>学习与生活</h3>
+          <p>分享知识管理、效率系统、慢生产力和长期主义实践，记录那些对生活有帮助的方法。</p>
+          <span class="project-status">强调长期复利</span>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -59,7 +91,7 @@ description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
       <div class="section-heading">
         <div>
           <span class="eyebrow">Latest Posts</span>
-          <h2>最近文章</h2>
+          <h2>最新文章</h2>
         </div>
         <div class="filters" role="tablist" aria-label="文章筛选">
           <button class="filter is-active" type="button" data-filter="all">全部</button>
@@ -100,25 +132,25 @@ description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
   <section class="section muted-section" id="about">
     <div class="container about-grid">
       <div>
-        <span class="eyebrow">About Me</span>
-        <h2>关于这个博客</h2>
+        <span class="eyebrow">About This Blog</span>
+        <h2>为什么要持续写这个博客</h2>
         <p>
-          这个站点现在采用 Jekyll + Markdown 维护内容，适合直接托管到 GitHub Pages。无需数据库，也不需要复杂后端。
+          对我来说，博客不是一个“展示自己”的页面，而是一套持续整理输入与输出的机制。很多事情只有写下来，才能真正想明白。
         </p>
         <p>
-          你可以把它当成一张长期生长的数字名片：既能展示作品，也能持续记录经验、想法和学习过程。
+          我希望这个网站能长期积累：既有项目过程中的一线经验，也有日常学习里慢慢形成的方法论。
         </p>
       </div>
 
       <div class="card feature-card">
-        <h3>我会写什么</h3>
+        <h3>你会在这里看到</h3>
         <div class="chip-list">
           <span class="chip">前端开发</span>
-          <span class="chip">AI 工作流</span>
+          <span class="chip">静态博客</span>
+          <span class="chip">AI 助手</span>
+          <span class="chip">知识管理</span>
           <span class="chip">效率系统</span>
-          <span class="chip">产品思考</span>
-          <span class="chip">学习笔记</span>
-          <span class="chip">生活观察</span>
+          <span class="chip">长期主义</span>
         </div>
       </div>
     </div>
@@ -128,28 +160,28 @@ description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
     <div class="container">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">Projects</span>
-          <h2>精选项目</h2>
+          <span class="eyebrow">Projects & Experiments</span>
+          <h2>正在做的事情</h2>
         </div>
       </div>
 
       <div class="project-grid">
         <article class="card project-card">
-          <h3>个人知识库</h3>
-          <p>整理阅读、技术与项目笔记，让碎片知识变成长期资产。</p>
-          <span class="project-status">持续维护中</span>
+          <h3>个人博客系统</h3>
+          <p>用 GitHub Pages、Jekyll 和 Markdown 构建一个足够轻量、可长期维护、支持在线发文的个人站点。</p>
+          <span class="project-status">持续优化中</span>
         </article>
 
         <article class="card project-card">
-          <h3>AI 工具实验室</h3>
-          <p>尝试把生成式 AI 接到真实流程里，验证哪些场景能稳定提效。</p>
-          <span class="project-status">正在迭代</span>
+          <h3>AI 实验工作台</h3>
+          <p>把 AI 接入写作、总结、代码辅助与任务拆解流程，验证哪些习惯真的能稳定提升效率。</p>
+          <span class="project-status">持续试验中</span>
         </article>
 
         <article class="card project-card">
-          <h3>Markdown 博客系统</h3>
-          <p>当前站点本身：文章用 Markdown 写，GitHub Pages 自动构建上线。</p>
-          <span class="project-status">已上线</span>
+          <h3>知识沉淀体系</h3>
+          <p>把阅读记录、项目笔记和阶段性思考整理成一个能反复调用、逐步生长的个人知识库。</p>
+          <span class="project-status">长期建设中</span>
         </article>
       </div>
     </div>
@@ -160,12 +192,12 @@ description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
       <div class="contact-card card">
         <div>
           <span class="eyebrow">Contact</span>
-          <h2>保持联系</h2>
-          <p>如果你也在做有趣的项目，欢迎通过 GitHub 找到我。</p>
+          <h2>欢迎交流</h2>
+          <p>如果你也在做有趣的产品、写作系统或 AI 工作流，欢迎通过 GitHub 找到我。</p>
         </div>
 
         <div class="contact-actions">
-          <a class="button primary" href="https://github.com/YMZ1998" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button primary" href="https://github.com/YMZ1998" target="_blank" rel="noreferrer">访问 GitHub</a>
           <a class="button ghost" href="#top">返回顶部</a>
         </div>
       </div>
