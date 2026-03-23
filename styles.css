@@ -440,25 +440,59 @@ code {
   margin-top: 28px;
 }
 
+.photo-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.photo-page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.photo-page-button:hover,
+.photo-page-dot:hover {
+  transform: translateY(-1px);
+}
+
+.photo-page-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.photo-page-status {
+  min-width: 88px;
+  text-align: center;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   margin-top: 28px;
 }
 
 .photo-card {
-  grid-column: span 4;
   display: flex;
   flex-direction: column;
   gap: 0;
   padding: 0;
   overflow: hidden;
   min-height: 100%;
-}
-
-.photo-card--featured {
-  grid-column: span 6;
 }
 
 .photo-cover {
@@ -545,6 +579,29 @@ code {
   background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
   color: var(--text-soft);
   font-size: 0.86rem;
+}
+
+.photo-pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.photo-page-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-soft) 32%, transparent);
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition), width var(--transition);
+}
+
+.photo-page-dot.is-active {
+  width: 28px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
 .post-card,
@@ -910,16 +967,15 @@ code {
     display: none;
   }
 
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .topic-grid .project-card,
   .pinned-grid .project-card,
-  .photo-card,
   .post-card,
   .post-card.is-featured {
     grid-column: span 6;
-  }
-
-  .photo-card--featured {
-    grid-column: span 12;
   }
 
   .hero-panel {
@@ -943,6 +999,11 @@ code {
   .site-actions {
     width: 100%;
     justify-content: space-between;
+  }
+
+  .photo-pagination-controls {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .nav-toggle {
@@ -983,10 +1044,12 @@ code {
     display: none;
   }
 
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
   .topic-grid .project-card,
   .pinned-grid .project-card,
-  .photo-card,
-  .photo-card--featured,
   .post-card,
   .post-card.is-featured {
     grid-column: span 12;
@@ -1067,6 +1130,18 @@ code {
   .article-nav {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .photo-pagination-controls {
+    gap: 10px;
+  }
+
+  .photo-page-button {
+    padding: 9px 14px;
+  }
+
+  .photo-page-status {
+    min-width: auto;
   }
 
   .article-mobile-panels .card {

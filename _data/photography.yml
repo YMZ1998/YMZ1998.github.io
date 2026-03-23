@@ -1,0 +1,60 @@
+- category: 城市夜景
+  cover_title: Blue Hour
+  image: /assets/photography/city-night.svg
+  alt: 城市夜景摄影作品
+  title: 城市蓝调
+  tags:
+    - 夜景
+    - 广角
+    - 长曝光
+  description: 收集傍晚到入夜之间的建筑轮廓、车流轨迹与霓虹反光，让画面保持蓝调时刻的层次感。
+
+- category: 街头纪实
+  cover_title: Passing By
+  image: /assets/photography/street-moment.svg
+  alt: 街头纪实摄影作品
+  title: 街头一瞬
+  tags:
+    - 抓拍
+    - 街头
+  description: 把行人、转角、窗影和路灯之间的关系收进一个瞬间里，让故事感落在日常尺度上。
+
+- category: 自然光影
+  cover_title: Quiet Light
+  image: /assets/photography/nature-light.svg
+  alt: 自然光影摄影作品
+  title: 自然光影
+  tags:
+    - 逆光
+    - 层次
+  description: 用清晨和黄昏的侧光表现树林、草地与云层的层次，让画面留出呼吸感和空间感。
+
+- category: 旅行记录
+  cover_title: On The Road
+  image: /assets/photography/travel-road.svg
+  alt: 旅行记录摄影作品
+  title: 旅途片段
+  tags:
+    - 旅拍
+    - 人文
+  description: 把沿途站台、海边、山路和陌生街区串起来，用一组图像保留旅行中的节奏变化。
+
+- category: 黑白系列
+  cover_title: Contrast
+  image: /assets/photography/mono-contrast.svg
+  alt: 黑白摄影作品
+  title: 黑白街头
+  tags:
+    - 黑白
+    - 结构
+  description: 去掉色彩之后，把注意力集中到线条、体块、反光和人物关系上，让对比更直接。
+
+- category: 环境人像
+  cover_title: Soft Scene
+  image: /assets/photography/portrait-scene.svg
+  alt: 环境人像摄影作品
+  title: 环境人像
+  tags:
+    - 人像
+    - 环境
+  description: 通过场景与人物的关系去讲故事，让人物不悬空，而是和空间一起构成完整情绪。
