@@ -115,10 +115,10 @@ function setCurrentYear() {
 
 function setupArticleToc() {
   const article = document.querySelector(".article-content");
-  const sidebar = document.querySelector("[data-article-sidebar]");
+  const tocSection = document.querySelector("[data-article-toc-section]");
   const toc = document.querySelector("[data-article-toc]");
 
-  if (!article || !sidebar || !toc) {
+  if (!article || !tocSection || !toc) {
     return;
   }
 
@@ -150,7 +150,7 @@ function setupArticleToc() {
     toc.appendChild(link);
   });
 
-  sidebar.hidden = false;
+  tocSection.hidden = false;
 
   const links = Array.from(toc.querySelectorAll("a"));
 
