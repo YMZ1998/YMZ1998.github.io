@@ -4,6 +4,8 @@ const root = document.documentElement;
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeToggleIcon = document.querySelector(".theme-toggle-icon");
 const themeToggleText = document.querySelector(".theme-toggle-text");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const siteNav = document.querySelector("[data-site-nav]");
 
 function getPreferredTheme() {
   const savedTheme = localStorage.getItem(themeStorageKey);
@@ -30,6 +32,36 @@ function toggleTheme() {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   localStorage.setItem(themeStorageKey, nextTheme);
   applyTheme(nextTheme);
+}
+
+function closeNav() {
+  if (!navToggle || !siteNav) {
+    return;
+  }
+
+  navToggle.setAttribute("aria-expanded", "false");
+  siteNav.classList.remove("is-open");
+}
+
+function setupMobileNav() {
+  if (!navToggle || !siteNav) {
+    return;
+  }
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeNav();
+    }
+  });
 }
 
 function setupPostFilters() {
@@ -83,6 +115,7 @@ function setCurrentYear() {
 
 applyTheme(getPreferredTheme());
 themeToggle?.addEventListener("click", toggleTheme);
+setupMobileNav();
 setupPostFilters();
 setupScrollProgress();
 setCurrentYear();
