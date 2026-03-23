@@ -440,6 +440,31 @@ code {
   margin-top: 28px;
 }
 
+.page-main h1 {
+  margin: 0;
+  line-height: 1.12;
+  font-size: clamp(2.2rem, 4.4vw, 3.5rem);
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+}
+
+.hub-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
 .photo-pagination-controls {
   display: flex;
   align-items: center;
@@ -971,6 +996,10 @@ code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+
   .topic-grid .project-card,
   .pinned-grid .project-card,
   .post-card,
@@ -1045,6 +1074,10 @@ code {
   }
 
   .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-grid {
     grid-template-columns: 1fr;
   }
 

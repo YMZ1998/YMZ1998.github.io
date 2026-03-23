@@ -1,0 +1,49 @@
+---
+layout: default
+title: YMZ Blog | 摄影
+description: 摄影作品分页展示。
+permalink: /photography/
+---
+<main class="page-main">
+  <section class="section muted-section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Photography Column</span>
+          <h1>摄影</h1>
+          <p class="section-copy">摄影内容单独成页，按分页浏览，不再和文章或项目内容混在一起。</p>
+        </div>
+        <div class="photo-pagination-controls" aria-label="摄影作品分页">
+          <button class="photo-page-button" type="button" data-photo-prev aria-label="上一页">← 上一页</button>
+          <span class="photo-page-status" data-photo-status>第 1 / 1 页</span>
+          <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
+        </div>
+      </div>
+
+      <div class="photo-grid" data-photo-gallery>
+        {% for work in site.data.photography %}
+        <article class="photo-card card" data-photo-item>
+          <div class="photo-cover">
+            <img class="photo-image" src="{{ work.image | relative_url }}" alt="{{ work.alt }}">
+            <div class="photo-overlay">
+              <span class="photo-chip">{{ work.category }}</span>
+              <strong>{{ work.cover_title }}</strong>
+            </div>
+          </div>
+          <div class="photo-body">
+            <div class="photo-meta">
+              {% for tag in work.tags %}
+              <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <h3>{{ work.title }}</h3>
+            <p>{{ work.description }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="photo-pagination-dots" data-photo-dots aria-label="摄影作品页码"></div>
+    </div>
+  </section>
+</main>
