@@ -67,6 +67,10 @@ button,
   font: inherit;
 }
 
+code {
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
 .container {
   width: var(--container);
   margin: 0 auto;
@@ -394,10 +398,6 @@ button,
   color: var(--text-soft);
 }
 
-.article-page {
-  min-height: 100vh;
-}
-
 .article-shell {
   width: min(860px, calc(100vw - 40px));
   margin: 0 auto;
@@ -406,7 +406,7 @@ button,
 
 .article-topbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
   margin-bottom: 28px;
@@ -449,20 +449,28 @@ button,
 
 .article-content h2,
 .article-content h3 {
-  margin-top: 0;
-}
-
-.article-content h2 + p,
-.article-content h3 + p {
-  margin-top: -4px;
-}
-
-.article-content section + section {
   margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.article-content p,
+.article-content ul,
+.article-content ol,
+.article-content pre,
+.article-content blockquote {
+  margin: 16px 0;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 24px;
+}
+
+.article-content li + li {
+  margin-top: 8px;
 }
 
 .article-content blockquote {
-  margin: 24px 0;
   padding: 18px 20px;
   border-left: 4px solid var(--primary);
   border-radius: 0 18px 18px 0;
@@ -478,9 +486,26 @@ button,
   color: var(--text);
 }
 
-.article-content code {
-  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
-  font-size: 0.95rem;
+.article-content a {
+  color: var(--primary);
+}
+
+.article-content hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 24px 0;
+}
+
+.article-content > :first-child {
+  margin-top: 0;
+}
+
+.article-content > :last-child {
+  margin-bottom: 0;
+}
+
+.empty-posts {
+  grid-column: 1 / -1;
 }
 
 .article-nav {
