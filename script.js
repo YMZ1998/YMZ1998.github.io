@@ -113,9 +113,71 @@ function setCurrentYear() {
   });
 }
 
+function setupArticleToc() {
+  const article = document.querySelector(".article-content");
+  const sidebar = document.querySelector("[data-article-sidebar]");
+  const toc = document.querySelector("[data-article-toc]");
+
+  if (!article || !sidebar || !toc) {
+    return;
+  }
+
+  const headings = Array.from(article.querySelectorAll("h2, h3")).filter((heading) => heading.textContent.trim());
+
+  if (!headings.length) {
+    return;
+  }
+
+  const usedIds = new Set();
+
+  headings.forEach((heading, index) => {
+    if (!heading.id) {
+      let nextId = `section-${index + 1}`;
+
+      while (usedIds.has(nextId) || document.getElementById(nextId)) {
+        nextId = `${nextId}-copy`;
+      }
+
+      heading.id = nextId;
+    }
+
+    usedIds.add(heading.id);
+
+    const link = document.createElement("a");
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent.trim();
+    link.dataset.level = heading.tagName === "H2" ? "2" : "3";
+    toc.appendChild(link);
+  });
+
+  sidebar.hidden = false;
+
+  const links = Array.from(toc.querySelectorAll("a"));
+
+  const updateActiveLink = () => {
+    const offset = 140;
+    let activeId = headings[0].id;
+
+    headings.forEach((heading) => {
+      if (heading.getBoundingClientRect().top - offset <= 0) {
+        activeId = heading.id;
+      }
+    });
+
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);
+    });
+  };
+
+  updateActiveLink();
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+  window.addEventListener("resize", updateActiveLink);
+}
+
 applyTheme(getPreferredTheme());
 themeToggle?.addEventListener("click", toggleTheme);
 setupMobileNav();
 setupPostFilters();
 setupScrollProgress();
 setCurrentYear();
+setupArticleToc();

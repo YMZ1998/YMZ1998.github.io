@@ -7,38 +7,47 @@ layout: default
       <a class="back-link" href="{{ '/' | relative_url }}">← 返回首页</a>
     </div>
 
-    <header class="article-header">
-      {% if page.topic %}
-      <span class="article-kicker">{{ page.topic }}</span>
-      {% endif %}
-      <h1>{{ page.title }}</h1>
-      {% if page.summary %}
-      <p class="article-lead">{{ page.summary }}</p>
-      {% endif %}
-      <div class="article-meta">
-        <span>发布日期：{{ page.date | date: "%Y-%m-%d" }}</span>
-        {% if page.read_time %}
-        <span>阅读时间：约 {{ page.read_time }}</span>
-        {% endif %}
+    <div class="article-layout">
+      <aside class="article-sidebar card" data-article-sidebar hidden>
+        <p class="article-sidebar-title">快速选择</p>
+        <nav class="article-toc" data-article-toc aria-label="文章目录"></nav>
+      </aside>
+
+      <div class="article-main">
+        <header class="article-header">
+          {% if page.topic %}
+          <span class="article-kicker">{{ page.topic }}</span>
+          {% endif %}
+          <h1>{{ page.title }}</h1>
+          {% if page.summary %}
+          <p class="article-lead">{{ page.summary }}</p>
+          {% endif %}
+          <div class="article-meta">
+            <span>发布日期：{{ page.date | date: "%Y-%m-%d" }}</span>
+            {% if page.read_time %}
+            <span>阅读时间：约 {{ page.read_time }}</span>
+            {% endif %}
+          </div>
+        </header>
+
+        <article class="article-content">
+          {{ content }}
+        </article>
+
+        <nav class="article-nav">
+          {% if page.previous %}
+          <a class="back-link" href="{{ page.previous.url | relative_url }}">← 更早文章：{{ page.previous.title }}</a>
+          {% else %}
+          <span>没有更早的文章了</span>
+          {% endif %}
+
+          {% if page.next %}
+          <a class="back-link" href="{{ page.next.url | relative_url }}">更新文章：{{ page.next.title }} →</a>
+          {% else %}
+          <span>没有更新的文章了</span>
+          {% endif %}
+        </nav>
       </div>
-    </header>
-
-    <article class="article-content">
-      {{ content }}
-    </article>
-
-    <nav class="article-nav">
-      {% if page.previous %}
-      <a class="back-link" href="{{ page.previous.url | relative_url }}">← 更早文章：{{ page.previous.title }}</a>
-      {% else %}
-      <span>没有更早的文章了</span>
-      {% endif %}
-
-      {% if page.next %}
-      <a class="back-link" href="{{ page.next.url | relative_url }}">更新文章：{{ page.next.title }} →</a>
-      {% else %}
-      <span>没有更新的文章了</span>
-      {% endif %}
-    </nav>
+    </div>
   </section>
 </main>

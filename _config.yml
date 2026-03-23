@@ -2,6 +2,7 @@ title: YMZ Blog
 description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
 lang: zh-CN
 timezone: Asia/Shanghai
+future: true
 markdown: kramdown
 kramdown:
   input: GFM

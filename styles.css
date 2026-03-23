@@ -516,9 +516,20 @@ code {
 }
 
 .article-shell {
-  width: min(860px, calc(100vw - 32px));
+  width: min(1200px, calc(100vw - 32px));
   margin: 0 auto;
   padding: 72px 0 96px;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.article-main {
+  min-width: 0;
 }
 
 .article-topbar {
@@ -536,6 +547,54 @@ code {
 
 .article-header {
   margin-bottom: 32px;
+}
+
+.article-sidebar {
+  position: sticky;
+  top: 106px;
+  padding: 22px 18px;
+  max-height: calc(100vh - 128px);
+  overflow: auto;
+}
+
+.article-sidebar-title {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.article-toc {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.article-toc a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 14px;
+  color: var(--text-soft);
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.article-toc a:hover,
+.article-toc a:focus-visible {
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.article-toc a.is-active {
+  color: var(--primary);
+  background: var(--primary-soft);
+  font-weight: 700;
+}
+
+.article-toc a[data-level="3"] {
+  padding-left: 24px;
+  font-size: 0.95rem;
 }
 
 .article-header h1 {
@@ -637,6 +696,18 @@ code {
   .hero-grid,
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .article-shell {
+    width: min(860px, calc(100vw - 32px));
+  }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sidebar {
+    display: none;
   }
 
   .topic-grid .project-card,
