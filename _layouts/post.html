@@ -8,12 +8,7 @@ layout: default
     </div>
 
     <div class="article-layout">
-      <aside class="article-sidebar card" data-article-sidebar>
-        <section class="article-sidebar-section" data-article-toc-section hidden>
-          <p class="article-sidebar-title">快速选择</p>
-          <nav class="article-toc" data-article-toc aria-label="文章目录"></nav>
-        </section>
-
+      <aside class="article-sidebar article-sidebar--left card">
         <section class="article-sidebar-section article-sidebar-section--timeline">
           <p class="article-sidebar-title">时间轴切换</p>
           <nav class="article-timeline" aria-label="文章时间轴">
@@ -86,6 +81,11 @@ layout: default
           {% endif %}
         </nav>
       </div>
+
+      <aside class="article-sidebar article-sidebar--right card" data-article-toc-section hidden>
+        <p class="article-sidebar-title">快速选择</p>
+        <nav class="article-toc" data-article-toc aria-label="文章目录"></nav>
+      </aside>
     </div>
   </section>
 </main>
