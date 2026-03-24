@@ -220,6 +220,33 @@
   border: 1px solid var(--line);
 }
 
+.detail-cover-link {
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.detail-cover-link::after {
+  content: "查看原图";
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.58);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.detail-cover-link:hover,
+.detail-cover-link:focus-visible {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
 .detail-cover img {
   width: 100%;
   aspect-ratio: 4 / 3;
