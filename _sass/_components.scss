@@ -31,6 +31,11 @@
   font-weight: 700;
 }
 
+.button-inline {
+  padding: 10px 14px;
+  font-weight: 600;
+}
+
 .button.primary {
   color: #fff;
   background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--accent) 72%, var(--primary)));

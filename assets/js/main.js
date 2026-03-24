@@ -6,6 +6,7 @@ import { initPostFilters } from "./articles/filters.js";
 import { initArticleToc } from "./articles/toc.js";
 import { initArticleTimeline } from "./articles/timeline.js";
 import { initPhotoPagination } from "./photography/pagination.js";
+import { initPhotoLightbox } from "./photography/lightbox.js";
 import { initHomeFeatured } from "./home/featured.js";
 
 const page = document.body?.dataset.page;
@@ -30,4 +31,8 @@ if (page === "post") {
 
 if (page === "photography") {
   initPhotoPagination();
+}
+
+if (page === "photography" || page === "photo") {
+  initPhotoLightbox();
 }
