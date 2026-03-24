@@ -15,7 +15,7 @@ page_id: photography
         <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
       </div>
       {% endcapture %}
-      {% include section-heading.html level="h1" eyebrow="Photography" title="摄影" copy="摄影作品现在作为独立内容栏目维护，列表页负责浏览，详情页记录每组作品的主题、地点和拍摄信息。" controls=photo_controls %}
+      {% include section-heading.html level="h1" eyebrow="Photography" title="摄影" copy="摄影栏目现在用于展示原创拍摄与公开授权的风景参考图，列表页负责浏览，详情页保留主题、地点和来源说明。" controls=photo_controls %}
 
       {% assign sorted_photos = site.photography | sort: "order" %}
       <div class="photo-grid" data-photo-gallery>
