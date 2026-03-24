@@ -536,7 +536,9 @@ body[data-page="articles"] .articles-filters .filter {
   position: absolute;
   inset: 0;
   border: 0;
-  background: rgba(2, 6, 23, 0.78);
+  background: rgba(2, 6, 23, 0.42);
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
   cursor: pointer;
 }
 
@@ -546,10 +548,12 @@ body[data-page="articles"] .articles-filters .filter {
   width: min(1320px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
   padding: 18px;
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--line-strong) 70%, var(--line));
   border-radius: 28px;
-  background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 86%, transparent), color-mix(in srgb, var(--surface-subtle) 80%, transparent)),
+    color-mix(in srgb, var(--surface-solid) 70%, transparent);
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.28);
 }
 
 .lightbox-toolbar {
@@ -580,7 +584,7 @@ body[data-page="articles"] .articles-filters .filter {
   max-height: calc(100vh - 140px);
   overflow: auto;
   border-radius: 20px;
-  background: rgba(2, 6, 23, 0.38);
+  background: rgba(2, 6, 23, 0.2);
 }
 
 .lightbox-media img {
