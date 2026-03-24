@@ -214,7 +214,7 @@ body[data-page="home"] .hub-card {
 
 .listing-layout {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 340px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
@@ -252,10 +252,10 @@ body[data-page="home"] .hub-card {
 
 .article-timeline-link {
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 12px;
   align-items: start;
-  padding: 10px 12px 10px 14px;
+  padding: 12px 14px 12px 16px;
   border-radius: 14px;
   color: var(--text-soft);
   border: 1px solid transparent;
@@ -282,11 +282,12 @@ body[data-page="home"] .hub-card {
 }
 
 .article-timeline-text {
-  line-height: 1.45;
+  line-height: 1.5;
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 @media (max-width: 1100px) {

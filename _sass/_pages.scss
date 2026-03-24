@@ -1,12 +1,12 @@
 .article-shell {
-  width: min(1460px, calc(100vw - 32px));
+  width: min(1680px, calc(100vw - 32px));
   margin: 0 auto;
   padding: 72px 0 96px;
 }
 
 .article-layout {
   display: grid;
-  grid-template-columns: clamp(150px, 14vw, 180px) minmax(0, 920px) clamp(220px, 18vw, 260px);
+  grid-template-columns: clamp(240px, 20vw, 320px) minmax(0, 980px) clamp(240px, 19vw, 300px);
   gap: clamp(20px, 2vw, 32px);
   align-items: start;
   justify-content: center;
@@ -38,7 +38,7 @@
 .article-sidebar {
   position: sticky;
   top: 96px;
-  padding: 22px 18px;
+  padding: 24px 20px;
   max-height: calc(100vh - 128px);
   overflow: auto;
   scrollbar-width: thin;
@@ -271,11 +271,11 @@
 
 @media (max-width: 1100px) {
   .article-shell {
-    width: min(1120px, calc(100vw - 32px));
+    width: min(1320px, calc(100vw - 32px));
   }
 
   .article-layout {
-    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-columns: minmax(0, 1fr) 280px;
     gap: 24px;
   }
 
