@@ -13,7 +13,13 @@
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
-  transition: transform var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 
 .theme-toggle:hover,
@@ -23,12 +29,28 @@
 .photo-page-button:hover,
 .photo-page-dot:hover {
   transform: translateY(-1px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-toggle:focus-visible,
+.nav-toggle:focus-visible,
+.button:focus-visible,
+.filter:focus-visible,
+.photo-page-button:focus-visible,
+.photo-page-dot:focus-visible,
+.text-link:focus-visible,
+.subtle-link:focus-visible {
+  outline: none;
+  border-color: var(--line-strong);
+  box-shadow: var(--focus-ring), var(--shadow-soft);
 }
 
 .button {
-  padding: 13px 20px;
+  padding: 12px 20px;
   border-color: transparent;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .button-inline {
@@ -39,19 +61,22 @@
 .button.primary {
   color: #fff;
   background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--accent) 72%, var(--primary)));
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--primary) 24%, transparent);
 }
 
 .button.ghost {
   border-color: var(--line);
+  background: color-mix(in srgb, var(--surface-raised) 88%, transparent);
 }
 
 .card {
-  padding: 28px;
+  padding: 30px;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 94%, transparent), color-mix(in srgb, var(--surface-subtle) 92%, transparent)),
+    var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
 .eyebrow,
@@ -72,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
 .section-heading > div {
@@ -97,8 +122,8 @@
 }
 
 .section-copy {
-  max-width: 62ch;
-  margin: 12px 0 0;
+  max-width: 60ch;
+  margin: 14px 0 0;
   color: var(--text-soft);
 }
 
@@ -166,12 +191,21 @@
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 700;
   color: var(--primary);
+  transition: color var(--transition), transform var(--transition);
 }
 
 .subtle-link {
   color: var(--text-soft);
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  transform: translateX(2px);
 }
 
 .filters {
@@ -197,7 +231,7 @@
 }
 
 .check-list {
-  padding-left: 18px;
+  padding-left: 20px;
   margin: 18px 0 0;
 }
 
@@ -267,7 +301,7 @@
 
 @media (max-width: 640px) {
   .card {
-    padding: 22px;
+    padding: 24px;
     border-radius: 22px;
   }
 

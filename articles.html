@@ -5,30 +5,40 @@ description: 技术记录、实验笔记和部署教程文章。
 permalink: /articles/
 page_id: articles
 ---
-<main class="page-main">
-  <section class="section">
+<main class="page-main articles-main">
+  <section class="section articles-section">
     <div class="container">
-      <div class="listing-layout">
-        <aside class="listing-sidebar card">
-          <p class="article-sidebar-title">按时间浏览</p>
-          {% include article-timeline.html items=site.posts label="文章时间轴" %}
+      <div class="listing-layout listing-layout--articles">
+        <aside class="listing-sidebar listing-sidebar--articles card">
+          <div class="listing-sidebar-copy">
+            <span class="article-kicker">Archive</span>
+            <h2>按时间浏览</h2>
+            <p>从最近更新到更早文章，快速回看部署、实验和长期项目相关写作。</p>
+          </div>
+          <div class="listing-sidebar-meta">
+            <span class="meta-chip">{{ site.posts | size }} 篇文章</span>
+          </div>
+          <div class="article-timeline-shell">
+            <p class="article-sidebar-title">时间轴</p>
+            {% include article-timeline.html items=site.posts label="文章时间轴" %}
+          </div>
         </aside>
 
         <div class="listing-main">
           {% capture article_filters %}
-          <div class="filters" role="tablist" aria-label="文章筛选">
-            <button class="filter is-active" type="button" data-filter="all">全部</button>
+          <div class="filters articles-filters" aria-label="文章筛选">
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
             {% assign topics = site.posts | map: "topic" | uniq %}
             {% for topic in topics %}
             {% if topic %}
-            <button class="filter" type="button" data-filter="{{ topic }}">{{ topic }}</button>
+            <button class="filter" type="button" data-filter="{{ topic }}" aria-pressed="false">{{ topic }}</button>
             {% endif %}
             {% endfor %}
           </div>
           {% endcapture %}
           {% include section-heading.html level="h1" eyebrow="Writing" title="文章" copy="这里集中整理部署教程、实验笔记、工程判断和与长期项目相关的技术写作。" controls=article_filters %}
 
-          <div class="post-grid">
+          <div class="post-grid articles-grid">
             {% for post in site.posts %}
             {% include post-card.html post=post featured=forloop.first %}
             {% else %}
@@ -39,6 +49,12 @@ page_id: articles
             </article>
             {% endfor %}
           </div>
+
+          <article class="articles-empty card" data-filter-empty hidden>
+            <span class="post-tag">No Matching Posts</span>
+            <h3>当前筛选下还没有文章</h3>
+            <p>可以切回“全部”或选择其他主题，继续浏览最近整理的内容。</p>
+          </article>
         </div>
       </div>
     </div>

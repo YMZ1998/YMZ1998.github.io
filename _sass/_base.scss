@@ -2,11 +2,17 @@
   color-scheme: light;
   --bg: #f8fafc;
   --bg-muted: #eef2ff;
+  --bg-elevated: #f3f6fd;
   --surface: rgba(255, 255, 255, 0.84);
+  --surface-subtle: rgba(255, 255, 255, 0.74);
+  --surface-raised: rgba(255, 255, 255, 0.94);
+  --surface-hover: rgba(255, 255, 255, 0.98);
   --surface-strong: #ffffff;
   --surface-solid: #ffffff;
   --text: #0f172a;
   --text-soft: #475569;
+  --text-muted: #64748b;
+  --line-soft: rgba(15, 23, 42, 0.05);
   --line: rgba(15, 23, 42, 0.08);
   --line-strong: rgba(79, 70, 229, 0.18);
   --primary: #4f46e5;
@@ -14,6 +20,9 @@
   --accent: #14b8a6;
   --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
   --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 20px 44px rgba(15, 23, 42, 0.08);
+  --shadow-card-hover: 0 28px 64px rgba(15, 23, 42, 0.12);
+  --focus-ring: 0 0 0 4px rgba(79, 70, 229, 0.14);
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -26,11 +35,17 @@ html[data-theme="dark"] {
   color-scheme: dark;
   --bg: #020617;
   --bg-muted: #0f172a;
+  --bg-elevated: #111b31;
   --surface: rgba(15, 23, 42, 0.84);
+  --surface-subtle: rgba(15, 23, 42, 0.76);
+  --surface-raised: rgba(17, 28, 52, 0.94);
+  --surface-hover: rgba(19, 33, 60, 0.98);
   --surface-strong: #111c34;
   --surface-solid: #0f172a;
   --text: #e2e8f0;
   --text-soft: #94a3b8;
+  --text-muted: #a7b4c7;
+  --line-soft: rgba(148, 163, 184, 0.1);
   --line: rgba(148, 163, 184, 0.16);
   --line-strong: rgba(129, 140, 248, 0.22);
   --primary: #818cf8;
@@ -38,6 +53,9 @@ html[data-theme="dark"] {
   --accent: #2dd4bf;
   --shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
   --shadow-soft: 0 14px 32px rgba(2, 6, 23, 0.32);
+  --shadow-card: 0 18px 44px rgba(2, 6, 23, 0.36);
+  --shadow-card-hover: 0 28px 68px rgba(2, 6, 23, 0.5);
+  --focus-ring: 0 0 0 4px rgba(129, 140, 248, 0.2);
 }
 
 * {
@@ -54,9 +72,9 @@ body {
   line-height: 1.7;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 34%),
-    radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 30%),
-    linear-gradient(180deg, color-mix(in srgb, var(--bg-muted) 36%, transparent), transparent 20%),
+    radial-gradient(circle at top left, color-mix(in srgb, var(--primary) 12%, transparent), transparent 36%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 10%, transparent), transparent 31%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 44%, transparent), transparent 20%),
     var(--bg);
   transition: background-color var(--transition), color var(--transition);
 }

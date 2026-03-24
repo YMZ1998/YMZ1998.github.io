@@ -26,9 +26,9 @@ page_id: post
           <p class="article-lead">{{ page.summary }}</p>
           {% endif %}
           <div class="article-meta">
-            <span>发布日期：{{ page.date | date: "%Y-%m-%d" }}</span>
+            <span class="meta-chip article-meta-item">发布日期：{{ page.date | date: "%Y-%m-%d" }}</span>
             {% if page.read_time %}
-            <span>阅读时间：约 {{ page.read_time }}</span>
+            <span class="meta-chip article-meta-item">阅读时间：约 {{ page.read_time }}</span>
             {% endif %}
           </div>
         </header>
@@ -49,17 +49,23 @@ page_id: post
           {{ content }}
         </article>
 
-        <nav class="article-nav">
+        <nav class="article-nav" aria-label="文章上下篇导航">
           {% if page.previous %}
-          <a class="back-link" href="{{ page.previous.url | relative_url }}">← 更早文章：{{ page.previous.title }}</a>
+          <a class="article-nav-link article-nav-link--prev" href="{{ page.previous.url | relative_url }}">
+            <span class="article-nav-label">更早文章</span>
+            <strong>{{ page.previous.title }}</strong>
+          </a>
           {% else %}
-          <span>没有更早的文章了</span>
+          <span class="article-nav-placeholder">没有更早的文章了</span>
           {% endif %}
 
           {% if page.next %}
-          <a class="back-link" href="{{ page.next.url | relative_url }}">更新文章：{{ page.next.title }} →</a>
+          <a class="article-nav-link article-nav-link--next" href="{{ page.next.url | relative_url }}">
+            <span class="article-nav-label">更新文章</span>
+            <strong>{{ page.next.title }}</strong>
+          </a>
           {% else %}
-          <span>没有更新的文章了</span>
+          <span class="article-nav-placeholder">没有更新的文章了</span>
           {% endif %}
         </nav>
       </div>

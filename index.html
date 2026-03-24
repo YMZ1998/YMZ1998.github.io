@@ -4,17 +4,19 @@ title: YMZ Blog | 个人主页
 description: 个人主页，集中整理医学图像、工程实践与摄影作品。
 page_id: home
 ---
-<main>
+<main class="home-main">
   {% capture hero_actions %}
   <a class="button primary" href="{{ '/articles/' | relative_url }}">查看文章</a>
   <a class="button ghost" href="{{ '/projects/' | relative_url }}">浏览项目</a>
   <a class="button ghost" href="{{ '/photography/' | relative_url }}">进入摄影</a>
   {% endcapture %}
   {% capture hero_side %}
-  <p class="panel-label">关于这个站点</p>
-  <h2>{{ site.author.role }}</h2>
-  <p class="panel-text">{{ site.author.intro }}</p>
-  <ul class="check-list">
+  <div class="home-hero-panel-copy">
+    <p class="panel-label">关于这个站点</p>
+    <h2>{{ site.author.role }}</h2>
+    <p class="panel-text">{{ site.author.intro }}</p>
+  </div>
+  <ul class="check-list home-hero-points">
     <li>内容按栏目拆分，不再全部堆在首页</li>
     <li>文章、项目、摄影都保留长期更新空间</li>
     <li>更接近真实个人研究与创作主页</li>
