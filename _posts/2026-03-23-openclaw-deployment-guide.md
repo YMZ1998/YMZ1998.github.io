@@ -6,6 +6,7 @@ topic: 工程
 read_time: 9 分钟
 summary: 按官方推荐路径，把 OpenClaw 部署到 Linux/VPS：安装运行时、完成 onboarding、挂成 systemd 服务，并通过 SSH 隧道远程访问控制界面。
 description: 基于官方文档整理一套 OpenClaw Linux 部署流程，覆盖安装、服务化、SSH 隧道、控制台访问、更新与排障。
+featured: true
 ---
 
 > 本文基于 2026-03-23 查阅的 OpenClaw 官方文档整理，优先采用官方目前推荐的 Linux / VPS 路径。

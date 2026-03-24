@@ -1,30 +1,18 @@
 ---
 layout: default
+page_id: post
 ---
 <main class="article-page-main">
   <section class="article-shell">
     <div class="article-topbar">
-      <a class="back-link" href="{{ '/' | relative_url }}">← 返回首页</a>
+      <a class="back-link" href="{{ '/articles/' | relative_url }}">← 返回文章页</a>
     </div>
 
     <div class="article-layout">
       <aside class="article-sidebar article-sidebar--left card">
         <section class="article-sidebar-section article-sidebar-section--timeline">
           <p class="article-sidebar-title">时间轴切换</p>
-          <nav class="article-timeline" aria-label="文章时间轴">
-            {% assign timeline_year = "" %}
-            {% for post in site.posts %}
-            {% assign post_year = post.date | date: "%Y" %}
-            {% if post_year != timeline_year %}
-            <p class="article-timeline-year">{{ post_year }}</p>
-            {% assign timeline_year = post_year %}
-            {% endif %}
-            <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
-              <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
-              <span class="article-timeline-text">{{ post.title }}</span>
-            </a>
-            {% endfor %}
-          </nav>
+          {% include article-timeline.html items=site.posts current_url=page.url label="文章时间轴" %}
         </section>
       </aside>
 
@@ -53,20 +41,7 @@ layout: default
 
           <section class="article-timeline-mobile card" aria-label="文章时间轴">
             <p class="article-sidebar-title">时间轴切换</p>
-            <nav class="article-timeline article-timeline--mobile">
-              {% assign mobile_timeline_year = "" %}
-              {% for post in site.posts %}
-              {% assign mobile_post_year = post.date | date: "%Y" %}
-              {% if mobile_post_year != mobile_timeline_year %}
-              <p class="article-timeline-year">{{ mobile_post_year }}</p>
-              {% assign mobile_timeline_year = mobile_post_year %}
-              {% endif %}
-              <a class="article-timeline-link{% if post.url == page.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">
-                <span class="article-timeline-date">{{ post.date | date: "%m-%d" }}</span>
-                <span class="article-timeline-text">{{ post.title }}</span>
-              </a>
-              {% endfor %}
-            </nav>
+            {% include article-timeline.html items=site.posts current_url=page.url label="文章时间轴" %}
           </section>
         </div>
 

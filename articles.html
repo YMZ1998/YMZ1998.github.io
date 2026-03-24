@@ -1,46 +1,45 @@
 ---
 layout: default
 title: YMZ Blog | 文章
-description: 技术记录、实验笔记和教程文章。
+description: 技术记录、实验笔记和部署教程文章。
 permalink: /articles/
+page_id: articles
 ---
 <main class="page-main">
   <section class="section">
     <div class="container">
-      {% capture article_filters %}
-      <div class="filters" role="tablist" aria-label="文章筛选">
-        <button class="filter is-active" type="button" data-filter="all">全部</button>
-        {% assign topics = site.posts | map: "topic" | uniq %}
-        {% for topic in topics %}
-        {% if topic %}
-        <button class="filter" type="button" data-filter="{{ topic }}">{{ topic }}</button>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endcapture %}
-      {% include section-heading.html level="h1" eyebrow="Project Notes" title="文章" copy="这里集中放项目记录、实验笔记和相对完整的技术整理。" controls=article_filters %}
+      <div class="listing-layout">
+        <aside class="listing-sidebar card">
+          <p class="article-sidebar-title">按时间浏览</p>
+          {% include article-timeline.html items=site.posts label="文章时间轴" %}
+        </aside>
 
-      <div class="post-grid">
-        {% for post in site.posts %}
-        <article class="post-card card{% if forloop.first %} is-featured{% endif %}" data-post-card data-tag="{{ post.topic | escape }}">
-          <span class="post-tag">{{ post.topic }}</span>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.summary }}</p>
-          <div class="post-meta">
-            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-            {% if post.read_time %}
-            <span>{{ post.read_time }}</span>
+        <div class="listing-main">
+          {% capture article_filters %}
+          <div class="filters" role="tablist" aria-label="文章筛选">
+            <button class="filter is-active" type="button" data-filter="all">全部</button>
+            {% assign topics = site.posts | map: "topic" | uniq %}
+            {% for topic in topics %}
+            {% if topic %}
+            <button class="filter" type="button" data-filter="{{ topic }}">{{ topic }}</button>
             {% endif %}
+            {% endfor %}
           </div>
-          <a class="text-link" href="{{ post.url | relative_url }}">阅读全文 →</a>
-        </article>
-        {% else %}
-        <article class="post-card card empty-posts">
-          <span class="post-tag">暂无文章</span>
-          <h3>内容整理中</h3>
-          <p>新文章发布后会显示在这里。</p>
-        </article>
-        {% endfor %}
+          {% endcapture %}
+          {% include section-heading.html level="h1" eyebrow="Writing" title="文章" copy="这里集中整理部署教程、实验笔记、工程判断和与长期项目相关的技术写作。" controls=article_filters %}
+
+          <div class="post-grid">
+            {% for post in site.posts %}
+            {% include post-card.html post=post featured=forloop.first %}
+            {% else %}
+            <article class="post-card card empty-posts">
+              <span class="post-tag">暂无文章</span>
+              <h3>内容整理中</h3>
+              <p>新文章发布后会显示在这里。</p>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </section>

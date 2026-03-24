@@ -1,0 +1,14 @@
+<nav class="article-timeline" aria-label="{{ include.label | default: '时间轴' }}">
+  {% assign timeline_year = "" %}
+  {% for item in include.items %}
+    {% assign item_year = item.date | date: "%Y" %}
+    {% if item_year != timeline_year %}
+    <p class="article-timeline-year">{{ item_year }}</p>
+    {% assign timeline_year = item_year %}
+    {% endif %}
+    <a class="article-timeline-link{% if item.url == include.current_url %} is-current{% endif %}" href="{{ item.url | relative_url }}">
+      <span class="article-timeline-date">{{ item.date | date: "%m-%d" }}</span>
+      <span class="article-timeline-text">{{ item.title }}</span>
+    </a>
+  {% endfor %}
+</nav>

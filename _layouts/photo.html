@@ -1,0 +1,82 @@
+---
+layout: default
+page_id: photo
+---
+<main class="detail-page-main">
+  <section class="detail-shell">
+    <div class="container">
+      <div class="article-topbar">
+        <a class="back-link" href="{{ '/photography/' | relative_url }}">← 返回摄影页</a>
+      </div>
+
+      <div class="detail-layout detail-layout--photo">
+        <article class="detail-main">
+          <header class="detail-header detail-header--photo card">
+            <div class="detail-cover">
+              <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+            </div>
+            <div class="detail-copy">
+              <span class="eyebrow">{{ page.category }}</span>
+              <h1>{{ page.title }}</h1>
+              <p class="detail-lead">{{ page.summary }}</p>
+              <div class="card-meta">
+                <span class="meta-chip">{{ page.shoot_date | date: "%Y-%m-%d" }}</span>
+                {% if page.location %}
+                <span class="meta-chip">{{ page.location }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </header>
+
+          <article class="detail-prose card">
+            {{ content }}
+          </article>
+        </article>
+
+        <aside class="detail-sidebar">
+          <section class="detail-side-card card">
+            <p class="article-sidebar-title">拍摄信息</p>
+            <dl class="detail-meta-list">
+              <div>
+                <dt>分类</dt>
+                <dd>{{ page.category }}</dd>
+              </div>
+              <div>
+                <dt>日期</dt>
+                <dd>{{ page.shoot_date | date: "%Y-%m-%d" }}</dd>
+              </div>
+              {% if page.location %}
+              <div>
+                <dt>地点</dt>
+                <dd>{{ page.location }}</dd>
+              </div>
+              {% endif %}
+            </dl>
+            {% if page.tags %}
+            <div class="photo-meta">
+              {% for tag in page.tags %}
+              <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if page.gear %}
+            <p class="detail-side-note">器材：{{ page.gear | join: " / " }}</p>
+            {% endif %}
+          </section>
+        </aside>
+      </div>
+
+      {% assign related_photos = site.photography | sort: "order" | where_exp: "item", "item.url != page.url" %}
+      {% if related_photos.size > 0 %}
+      <section class="section section--compact">
+        {% include section-heading.html eyebrow="More Photography" title="继续浏览其他作品" copy="不同主题的作品会继续补充到这个栏目里。" %}
+        <div class="photo-grid">
+          {% for photo in related_photos limit: 3 %}
+          {% include photo-card.html photo=photo %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </div>
+  </section>
+</main>

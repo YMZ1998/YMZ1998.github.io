@@ -1,0 +1,16 @@
+<section class="section{% if include.muted %} muted-section{% endif %}" id="{{ include.section_id }}">
+  <div class="container">
+    {% include section-heading.html eyebrow=include.eyebrow title=include.title copy=include.copy action_href=include.action_href action_label=include.action_label %}
+    <div class="{{ include.grid_class }}">
+      {% for item in include.items limit: include.limit %}
+        {% if include.kind == "post" %}
+          {% include post-card.html post=item featured=forloop.first %}
+        {% elsif include.kind == "project" %}
+          {% include project-card.html project=item %}
+        {% elsif include.kind == "photo" %}
+          {% include photo-card.html photo=item %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

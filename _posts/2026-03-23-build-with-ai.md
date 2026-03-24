@@ -6,6 +6,7 @@ topic: AI
 read_time: 6 分钟
 summary: AI 的价值不在于偶尔答对一个问题，而在于能否稳定嵌入你的日常工作流程。
 description: 分享我如何把 AI 从问答体验变成工作流的一部分。
+featured: true
 ---
 
 ## 从“会用”到“用得久”

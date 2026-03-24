@@ -1,5 +1,11 @@
 <nav class="site-nav" data-site-nav aria-label="主导航">
   {% for item in site.data.navigation %}
-  <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+  {% assign is_active = false %}
+  {% if item.url == "/" and page.url == "/" %}
+    {% assign is_active = true %}
+  {% elsif item.url != "/" and page.url contains item.url %}
+    {% assign is_active = true %}
+  {% endif %}
+  <a class="{% if is_active %}is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
   {% endfor %}
 </nav>

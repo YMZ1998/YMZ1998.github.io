@@ -1,0 +1,77 @@
+---
+layout: default
+page_id: project
+---
+<main class="detail-page-main">
+  <section class="detail-shell">
+    <div class="container">
+      <div class="article-topbar">
+        <a class="back-link" href="{{ '/projects/' | relative_url }}">← 返回项目页</a>
+      </div>
+
+      <div class="detail-layout">
+        <article class="detail-main">
+          <header class="detail-header card">
+            <span class="eyebrow">项目详情</span>
+            <h1>{{ page.title }}</h1>
+            <p class="detail-lead">{{ page.summary }}</p>
+            <div class="card-meta">
+              <span class="status-badge status-badge--{{ page.status | downcase | replace: ' ', '-' }}">{{ page.status }}</span>
+              {% if page.period %}
+              <span class="meta-chip">{{ page.period }}</span>
+              {% endif %}
+            </div>
+            {% if page.stack %}
+            <div class="chip-list">
+              {% for item in page.stack %}
+              <span class="chip">{{ item }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </header>
+
+          <article class="detail-prose card">
+            {{ content }}
+          </article>
+        </article>
+
+        <aside class="detail-sidebar">
+          <section class="detail-side-card card">
+            <p class="article-sidebar-title">项目信息</p>
+            <dl class="detail-meta-list">
+              <div>
+                <dt>状态</dt>
+                <dd>{{ page.status }}</dd>
+              </div>
+              {% if page.period %}
+              <div>
+                <dt>周期</dt>
+                <dd>{{ page.period }}</dd>
+              </div>
+              {% endif %}
+              <div>
+                <dt>分类</dt>
+                <dd>长期项目</dd>
+              </div>
+            </dl>
+            {% if page.repo_url %}
+            <a class="button primary detail-button" href="{{ page.repo_url }}" target="_blank" rel="noreferrer">打开仓库 ↗</a>
+            {% endif %}
+          </section>
+        </aside>
+      </div>
+
+      {% assign related_projects = site.projects | sort: "order" | where_exp: "item", "item.url != page.url" %}
+      {% if related_projects.size > 0 %}
+      <section class="section section--compact">
+        {% include section-heading.html eyebrow="More Projects" title="继续浏览其他项目" copy="从当前项目延伸到工具链、方法实验和展示层实践。" %}
+        <div class="project-grid">
+          {% for project in related_projects limit: 3 %}
+          {% include project-card.html project=project %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </div>
+  </section>
+</main>

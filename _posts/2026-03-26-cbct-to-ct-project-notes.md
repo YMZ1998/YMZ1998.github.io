@@ -6,6 +6,7 @@ topic: 医学图像
 read_time: 8 分钟
 summary: 从 GitHub 主页置顶项目出发，梳理我为什么会持续关注 CBCT 到 pseudo CT 的生成问题。
 description: 围绕 CBCT-to-CT 项目，记录这一方向为什么值得长期投入。
+featured: true
 ---
 
 ## 这是我主页里最核心的一条线

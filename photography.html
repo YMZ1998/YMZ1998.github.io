@@ -1,8 +1,9 @@
 ---
 layout: default
 title: YMZ Blog | 摄影
-description: 摄影作品分页展示。
+description: 摄影作品索引与独立作品详情页。
 permalink: /photography/
+page_id: photography
 ---
 <main class="page-main">
   <section class="section muted-section">
@@ -14,28 +15,12 @@ permalink: /photography/
         <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
       </div>
       {% endcapture %}
-      {% include section-heading.html level="h1" eyebrow="Photography Column" title="摄影" copy="摄影内容单独成页，按分页浏览，不再和文章或项目内容混在一起。" controls=photo_controls %}
+      {% include section-heading.html level="h1" eyebrow="Photography" title="摄影" copy="摄影作品现在作为独立内容栏目维护，列表页负责浏览，详情页记录每组作品的主题、地点和拍摄信息。" controls=photo_controls %}
 
+      {% assign sorted_photos = site.photography | sort: "order" %}
       <div class="photo-grid" data-photo-gallery>
-        {% for work in site.data.photography %}
-        <article class="photo-card card" data-photo-item>
-          <div class="photo-cover">
-            <img class="photo-image" src="{{ work.image | relative_url }}" alt="{{ work.alt }}">
-            <div class="photo-overlay">
-              <span class="photo-chip">{{ work.category }}</span>
-              <strong>{{ work.cover_title }}</strong>
-            </div>
-          </div>
-          <div class="photo-body">
-            <div class="photo-meta">
-              {% for tag in work.tags %}
-              <span>{{ tag }}</span>
-              {% endfor %}
-            </div>
-            <h3>{{ work.title }}</h3>
-            <p>{{ work.description }}</p>
-          </div>
-        </article>
+        {% for photo in sorted_photos %}
+        {% include photo-card.html photo=photo %}
         {% endfor %}
       </div>
 

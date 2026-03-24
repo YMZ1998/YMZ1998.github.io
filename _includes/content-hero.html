@@ -1,0 +1,22 @@
+<section class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {% if include.eyebrow %}
+      <span class="eyebrow">{{ include.eyebrow }}</span>
+      {% endif %}
+      <h1>{{ include.title }}</h1>
+      <p class="hero-lead">{{ include.copy }}</p>
+      {% if include.actions %}
+      <div class="hero-actions">
+        {{ include.actions }}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if include.side %}
+    <aside class="hero-panel card">
+      {{ include.side }}
+    </aside>
+    {% endif %}
+  </div>
+</section>

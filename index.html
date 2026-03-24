@@ -1,43 +1,71 @@
 ---
 layout: default
-title: YMZ Blog | 项目记录
-description: 一个持续记录医学图像实践、工程项目和摄影作品的个人站点。
+title: YMZ Blog | 个人主页
+description: 个人主页，集中整理医学图像、工程实践与摄影作品。
+page_id: home
 ---
 <main>
-  <section class="hero section">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">{{ site.data.home.hero.eyebrow }}</span>
-        <h1>{{ site.data.home.hero.title }}</h1>
-        <p class="hero-lead">{{ site.data.home.hero.description }}</p>
+  {% capture hero_actions %}
+  <a class="button primary" href="{{ '/articles/' | relative_url }}">查看文章</a>
+  <a class="button ghost" href="{{ '/projects/' | relative_url }}">浏览项目</a>
+  <a class="button ghost" href="{{ '/photography/' | relative_url }}">进入摄影</a>
+  {% endcapture %}
+  {% capture hero_side %}
+  <p class="panel-label">关于这个站点</p>
+  <h2>{{ site.author.role }}</h2>
+  <p class="panel-text">{{ site.author.intro }}</p>
+  <ul class="check-list">
+    <li>内容按栏目拆分，不再全部堆在首页</li>
+    <li>文章、项目、摄影都保留长期更新空间</li>
+    <li>更接近真实个人研究与创作主页</li>
+  </ul>
+  {% endcapture %}
+  {% include content-hero.html eyebrow="YMZ · Personal Site" title="把医学图像、工程实践与摄影创作整理成一个可持续更新的个人站点" copy=site.author.bio actions=hero_actions side=hero_side %}
 
-        <div class="hero-actions">
-          <a class="button primary" href="{{ site.data.home.hero.primary.url | relative_url }}">{{ site.data.home.hero.primary.label }}</a>
-          <a class="button ghost" href="{{ site.data.home.hero.secondary.url | relative_url }}">{{ site.data.home.hero.secondary.label }}</a>
-        </div>
+  <section class="section">
+    <div class="container">
+      {% include section-heading.html eyebrow="Current Focus" title="当前研究 / 创作方向" copy="我更关注那些可以长期推进的方向：既有方法问题，也有工程组织和视觉表达。" %}
+      <div class="focus-grid">
+        {% for area in site.focus_areas %}
+        <article class="focus-card card">
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.description }}</p>
+        </article>
+        {% endfor %}
       </div>
-
-      <aside class="hero-panel card">
-        <p class="panel-label">{{ site.data.home.panel.label }}</p>
-        <h2>{{ site.data.home.panel.title }}</h2>
-        <p class="panel-text">{{ site.data.home.panel.description }}</p>
-        <ul class="check-list">
-          {% for bullet in site.data.home.panel.bullets %}
-          <li>{{ bullet }}</li>
-          {% endfor %}
-        </ul>
-      </aside>
     </div>
   </section>
 
+  {% assign featured_posts = site.posts | where: "featured", true %}
+  {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
+  {% assign featured_photos = site.photography | where: "featured", true | sort: "order" %}
+
+  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="精选文章" copy="最近更值得先读的几篇文章，主要围绕方法选择、工程组织和部署实践。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
+  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="精选项目" copy="这里放的是目前最能代表我长期投入方向的项目。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
+  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="精选摄影" copy="摄影栏目记录城市、旅途与环境中的光线、结构和情绪。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
+
   <section class="section muted-section">
     <div class="container">
-      {% include section-heading.html eyebrow=site.data.home.sections_intro.eyebrow title=site.data.home.sections_intro.title copy=site.data.home.sections_intro.description %}
-
+      {% include section-heading.html eyebrow="Contact / Navigation" title="继续浏览" copy="如果你想直接了解我最近在做什么，可以从文章、项目和摄影三个栏目继续往下看。" %}
       <div class="hub-grid">
-        {% for section in site.data.home.sections %}
-        {% include portal-card.html tag=section.tag title=section.title description=section.description url=section.url cta=section.cta %}
-        {% endfor %}
+        <article class="hub-card card">
+          <span class="post-tag">Articles</span>
+          <h3>文章</h3>
+          <p>集中整理技术记录、部署教程、实验判断和工程实践观察。</p>
+          <a class="text-link" href="{{ '/articles/' | relative_url }}">进入文章页 →</a>
+        </article>
+        <article class="hub-card card">
+          <span class="post-tag">Projects</span>
+          <h3>项目</h3>
+          <p>用更完整的详情页记录仓库、状态、技术栈和长期推进方向。</p>
+          <a class="text-link" href="{{ '/projects/' | relative_url }}">进入项目页 →</a>
+        </article>
+        <article class="hub-card card">
+          <span class="post-tag">Photography</span>
+          <h3>摄影</h3>
+          <p>作品集改成独立内容模型，后续会继续补充主题、地点和拍摄说明。</p>
+          <a class="text-link" href="{{ '/photography/' | relative_url }}">进入摄影页 →</a>
+        </article>
       </div>
     </div>
   </section>

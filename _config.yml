@@ -1,5 +1,5 @@
 title: YMZ Blog
-description: YMZ 的个人博客，记录开发、AI、效率与生活观察。
+description: 记录医学图像、工程实践与摄影创作的个人站点。
 lang: zh-CN
 timezone: Asia/Shanghai
 future: true
@@ -7,3 +7,43 @@ markdown: kramdown
 kramdown:
   input: GFM
 permalink: /posts/:title/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  photography:
+    output: true
+    permalink: /photography/:name/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      page_id: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      page_id: project
+  - scope:
+      path: ""
+      type: photography
+    values:
+      layout: photo
+      page_id: photo
+author:
+  name: YMZ
+  role: 医学图像 / 工程实践 / 摄影记录
+  bio: 持续记录 CBCT、pseudo CT、工程结构设计与视觉表达。我更关心项目如何长期推进，而不只是某一次实验结果。
+  location: China
+  github: https://github.com/YMZ1998
+  intro: 这里是我的个人主页，用来整理长期项目、技术写作与摄影作品，而不是把所有内容都堆在一个首页里。
+focus_areas:
+  - title: CBCT 与 pseudo CT
+    description: 关注 CBCT 到 CT 的生成与重建问题，把研究任务拆成可持续推进的项目线。
+  - title: 工程结构与工具链
+    description: 记录模板、重建工具、可视化与代码组织方式，保证项目不是一次性实验。
+  - title: 摄影与视觉表达
+    description: 用影像记录城市、旅途和环境，把“结果如何被看见”也纳入创作的一部分。

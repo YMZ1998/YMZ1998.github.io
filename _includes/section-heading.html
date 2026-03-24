@@ -1,14 +1,20 @@
-<div class="section-heading">
+<div class="section-heading{% if include.compact %} section-heading--compact{% endif %}">
   <div>
+    {% if include.eyebrow %}
     <span class="eyebrow">{{ include.eyebrow }}</span>
+    {% endif %}
     {% if include.level == "h1" %}
     <h1>{{ include.title }}</h1>
     {% else %}
     <h2>{{ include.title }}</h2>
     {% endif %}
+    {% if include.copy %}
     <p class="section-copy">{{ include.copy }}</p>
+    {% endif %}
   </div>
-  {% if include.controls %}
+  {% if include.action_href and include.action_label %}
+  <a class="button ghost" href="{{ include.action_href | relative_url }}">{{ include.action_label }}</a>
+  {% elsif include.controls %}
   {{ include.controls }}
   {% endif %}
 </div>

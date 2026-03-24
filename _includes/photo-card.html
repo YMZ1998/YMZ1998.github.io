@@ -1,0 +1,26 @@
+<article class="photo-card card" data-photo-item>
+  <a class="photo-cover" href="{{ include.photo.url | relative_url }}" aria-label="查看 {{ include.photo.title }}">
+    <img class="photo-image" src="{{ include.photo.cover | relative_url }}" alt="{{ include.photo.title }}">
+    <div class="photo-overlay">
+      <span class="photo-chip">{{ include.photo.category }}</span>
+      <strong>{{ include.photo.title }}</strong>
+    </div>
+  </a>
+  <div class="photo-body">
+    <div class="card-meta">
+      {% if include.photo.location %}
+      <span class="meta-chip">{{ include.photo.location }}</span>
+      {% endif %}
+      <span class="meta-chip">{{ include.photo.shoot_date | date: "%Y-%m-%d" }}</span>
+    </div>
+    <p>{{ include.photo.summary }}</p>
+    {% if include.photo.tags %}
+    <div class="photo-meta">
+      {% for tag in include.photo.tags %}
+      <span>{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <a class="text-link" href="{{ include.photo.url | relative_url }}">查看作品 →</a>
+  </div>
+</article>
