@@ -17,16 +17,16 @@ page_id: home
     <p class="panel-text">{{ site.author.intro }}</p>
   </div>
   <ul class="check-list home-hero-points">
-    <li>内容按栏目拆分，不再全部堆在首页</li>
-    <li>文章、项目、摄影都保留长期更新空间</li>
-    <li>更接近真实个人研究与创作主页</li>
+    <li>首页只放入口，不把所有内容都塞在这里</li>
+    <li>项目、文章和摄影会慢慢补，不一次写满</li>
+    <li>尽量记录具体过程，少写空话</li>
   </ul>
   {% endcapture %}
-  {% include content-hero.html eyebrow="YMZ · Personal Site" title="把医学图像、工程实践与摄影创作整理成一个可持续更新的个人站点" copy=site.author.bio actions=hero_actions side=hero_side %}
+  {% include content-hero.html eyebrow="YMZ · Personal Site" title="把医学图像、工程实践和摄影慢慢整理到同一个地方" copy=site.author.bio actions=hero_actions side=hero_side %}
 
   <section class="section">
     <div class="container">
-      {% include section-heading.html eyebrow="Current Focus" title="当前研究 / 创作方向" copy="我更关注那些可以长期推进的方向：既有方法问题，也有工程组织和视觉表达。" %}
+      {% include section-heading.html eyebrow="Current Focus" title="最近在做的几件事" copy="没有刻意分得很细，大致就是医学图像、工程整理，还有摄影这三块。" %}
       <div class="focus-grid">
         {% for area in site.focus_areas %}
         <article class="focus-card card">
@@ -42,30 +42,30 @@ page_id: home
   {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
   {% assign featured_photos = site.photography | where: "featured", true | sort: "order" %}
 
-  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="精选文章" copy="最近更值得先读的几篇文章，主要围绕方法选择、工程组织和部署实践。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
-  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="精选项目" copy="这里放的是目前最能代表我长期投入方向的项目。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
-  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="精选摄影" copy="摄影栏目记录城市、旅途与环境中的光线、结构和情绪。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
+  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="先看这几篇" copy="如果你第一次来，可以先从这几篇文章开始，大致能看出我在关心什么。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
+  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="正在推进的项目" copy="这里挑的是我最近投入比较多、也愿意继续往下做的项目。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
+  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="随手放的几张图" copy="摄影这部分现在还在慢慢补，先放几张能代表页面气质的内容。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
 
   <section class="section muted-section">
     <div class="container">
-      {% include section-heading.html eyebrow="Contact / Navigation" title="继续浏览" copy="如果你想直接了解我最近在做什么，可以从文章、项目和摄影三个栏目继续往下看。" %}
+      {% include section-heading.html eyebrow="Contact / Navigation" title="往下看" copy="如果想更具体一点，可以直接进文章、项目或摄影页，不用在首页停太久。" %}
       <div class="hub-grid">
         <article class="hub-card card">
           <span class="post-tag">Articles</span>
           <h3>文章</h3>
-          <p>集中整理技术记录、部署教程、实验判断和工程实践观察。</p>
+          <p>主要是技术记录、部署过程和一些项目推进时的判断。</p>
           <a class="text-link" href="{{ '/articles/' | relative_url }}">进入文章页 →</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Projects</span>
           <h3>项目</h3>
-          <p>用更完整的详情页记录仓库、状态、技术栈和长期推进方向。</p>
+          <p>把正在做的项目单独拎出来，方便记清楚它们各自做到哪一步。</p>
           <a class="text-link" href="{{ '/projects/' | relative_url }}">进入项目页 →</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Photography</span>
           <h3>摄影</h3>
-          <p>作品集改成独立内容模型，后续会继续补充主题、地点和拍摄说明。</p>
+          <p>先放一些图，后面再慢慢把拍摄说明、地点和整理方式补完整。</p>
           <a class="text-link" href="{{ '/photography/' | relative_url }}">进入摄影页 →</a>
         </article>
       </div>

@@ -1,8 +1,8 @@
 export function initPhotoLightbox() {
   const lightbox = document.querySelector("[data-lightbox]");
-  const image = document.querySelector("[data-lightbox-image]");
-  const title = document.querySelector("[data-lightbox-title]");
-  const downloadLink = document.querySelector("[data-lightbox-download]");
+  const image = lightbox?.querySelector("[data-lightbox-image]");
+  const title = lightbox?.querySelector("[data-lightbox-title]");
+  const downloadLink = lightbox?.querySelector("[data-lightbox-download]");
   const triggers = document.querySelectorAll("[data-lightbox-trigger]");
   const closeButtons = document.querySelectorAll("[data-lightbox-close]");
 

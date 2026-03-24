@@ -36,14 +36,14 @@ defaults:
 author:
   name: YMZ
   role: 医学图像 / 工程实践 / 摄影记录
-  bio: 持续记录 CBCT、pseudo CT、工程结构设计与视觉表达。我更关心项目如何长期推进，而不只是某一次实验结果。
+  bio: 这里主要写我在做的 CBCT / pseudo CT、工程搭建和摄影记录。内容不追求面面俱到，更像一份一直在补的个人工作笔记。
   location: China
   github: https://github.com/YMZ1998
-  intro: 这里是我的个人主页，用来整理长期项目、技术写作与摄影作品，而不是把所有内容都堆在一个首页里。
+  intro: 这个站点用来放项目、文章和摄影。分成几个栏目，只是想让自己以后回头找东西时更清楚一点。
 focus_areas:
   - title: CBCT 与 pseudo CT
-    description: 关注 CBCT 到 CT 的生成与重建问题，把研究任务拆成可持续推进的项目线。
+    description: 主要关注 CBCT 到 pseudo CT 这条线，包括数据、训练、重建和结果判断这些具体问题。
   - title: 工程结构与工具链
-    description: 记录模板、重建工具、可视化与代码组织方式，保证项目不是一次性实验。
+    description: 也会记一些工程上的东西，比如模板、工具链、可视化和代码怎么组织，免得项目越做越乱。
   - title: 摄影与视觉表达
-    description: 用影像记录城市、旅途和环境，把“结果如何被看见”也纳入创作的一部分。
+    description: 摄影这部分先当作另一种记录方式，拍城市、路上看到的景和一些让我停下来的光线。

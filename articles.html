@@ -13,7 +13,7 @@ page_id: articles
           <div class="listing-sidebar-copy">
             <span class="article-kicker">Archive</span>
             <h2>按时间浏览</h2>
-            <p>从最近更新到更早文章，快速回看部署、实验和长期项目相关写作。</p>
+            <p>想知道我最近在写什么，可以直接从这里往前翻，不用一篇篇找。</p>
           </div>
           <div class="listing-sidebar-meta">
             <span class="meta-chip">{{ site.posts | size }} 篇文章</span>
@@ -36,7 +36,7 @@ page_id: articles
             {% endfor %}
           </div>
           {% endcapture %}
-          {% include section-heading.html level="h1" eyebrow="Writing" title="文章" copy="这里集中整理部署教程、实验笔记、工程判断和与长期项目相关的技术写作。" controls=article_filters %}
+          {% include section-heading.html level="h1" eyebrow="Writing" title="文章" copy="这里放技术记录、部署笔记，还有一些项目做到一半时顺手记下来的判断。" controls=article_filters %}
 
           <div class="post-grid articles-grid">
             {% for post in site.posts %}
@@ -51,9 +51,9 @@ page_id: articles
           </div>
 
           <article class="articles-empty card" data-filter-empty hidden>
-            <span class="post-tag">No Matching Posts</span>
-            <h3>当前筛选下还没有文章</h3>
-            <p>可以切回“全部”或选择其他主题，继续浏览最近整理的内容。</p>
+            <span class="post-tag">暂无匹配内容</span>
+            <h3>这个分类下面还没有内容</h3>
+            <p>可以先看看别的分类，或者直接切回“全部”。</p>
           </article>
         </div>
       </div>

@@ -4,8 +4,8 @@ title: "CBCT-to-CT：为什么这个项目值得长期做下去"
 date: 2026-03-26 09:00:00 +0800
 topic: 医学图像
 read_time: 8 分钟
-summary: 从 GitHub 主页置顶项目出发，梳理我为什么会持续关注 CBCT 到 pseudo CT 的生成问题。
-description: 围绕 CBCT-to-CT 项目，记录这一方向为什么值得长期投入。
+summary: 这篇主要想说明我为什么一直没离开 CBCT 到 pseudo CT 这条线，以及它难在哪里。
+description: 结合 CBCT-to-CT 项目，记下我为什么愿意一直做这件事。
 featured: true
 ---
 

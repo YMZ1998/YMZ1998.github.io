@@ -1,6 +1,6 @@
 ---
 title: 山湖晨光
-summary: 一张可公开使用的高山湖泊风景照，用来补充摄影栏目里的自然风景展示。
+summary: 先放一张公开授权的山湖照片，把摄影页的自然风景部分垫起来。
 category: 风景参考
 cover: /assets/photography/lake-mountain-landscape.jpg
 shoot_date: 2026-03-24
@@ -17,7 +17,7 @@ source_url: https://commons.wikimedia.org/wiki/File:Lake_Mountain_Landscape.jpg
 license: CC0 / Public Domain
 ---
 
-这张图用于补充摄影栏目里的风景内容，来源于可公开使用图片资源，不作为我的原创摄影作品展示。
+这张图先拿来补摄影页的风景部分，主要是为了把页面结构搭起来。它来自公开授权图库，不算我的原创作品。
 
 ## 备注
 
