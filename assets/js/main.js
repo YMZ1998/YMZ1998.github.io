@@ -33,6 +33,4 @@ if (page === "photography") {
   initPhotoPagination();
 }
 
-if (page === "photography" || page === "photo") {
-  initPhotoLightbox();
-}
+initPhotoLightbox();
