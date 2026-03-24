@@ -18,6 +18,11 @@
   min-width: 0;
 }
 
+.page-main .container,
+.detail-shell .container {
+  min-width: 0;
+}
+
 .article-topbar {
   display: flex;
   align-items: center;

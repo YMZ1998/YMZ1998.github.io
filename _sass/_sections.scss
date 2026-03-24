@@ -42,13 +42,20 @@
 }
 
 .focus-grid,
-.project-grid,
 .photo-grid,
 .hub-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   margin-top: 28px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+  align-items: stretch;
 }
 
 .post-grid {
@@ -93,7 +100,19 @@
 }
 
 .project-grid .project-card {
+  width: 100%;
   min-width: 0;
+  min-height: 100%;
+  grid-column: auto;
+}
+
+.project-card h3,
+.project-card p,
+.project-card .chip-list,
+.project-card .card-meta,
+.project-card .card-actions {
+  min-width: 0;
+  word-break: break-word;
 }
 
 .hub-card p,
@@ -262,9 +281,12 @@ body[data-page="home"] .hub-card {
 @media (max-width: 1100px) {
   .hero-grid,
   .focus-grid,
-  .project-grid,
   .photo-grid,
   .hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -286,9 +308,12 @@ body[data-page="home"] .hub-card {
 @media (max-width: 820px) {
   .hero-grid,
   .focus-grid,
-  .project-grid,
   .photo-grid,
   .hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
