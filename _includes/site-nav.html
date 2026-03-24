@@ -3,6 +3,8 @@
   {% assign is_active = false %}
   {% if item.url == "/" and page.url == "/" %}
     {% assign is_active = true %}
+  {% elsif item.url == "/articles/" and page.collection == "posts" %}
+    {% assign is_active = true %}
   {% elsif item.url != "/" and page.url contains item.url %}
     {% assign is_active = true %}
   {% endif %}

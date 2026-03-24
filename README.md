@@ -1,6 +1,6 @@
 # YMZ Blog
 
-一个适合直接部署到 GitHub Pages 的个人博客，现已改成 **Jekyll + Markdown 发文**，并支持 **草稿 -> 手动发布**。
+一个适合直接部署到 GitHub Pages 的个人站点，当前结构为 **Jekyll + Markdown 内容模型**，并支持 **草稿 -> 手动发布**。
 
 ## 在线发布
 
@@ -51,7 +51,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\publish-post.ps1 -Draft "wo-de-
 - 自动把草稿移动到 `D:\code\YMZ1998.github.io\_posts\`
 - 自动补成 `YYYY-MM-DD-title.md`
 - 自动更新时间
-- 首页自动读取这篇文章
+- 文章栏目会自动读取这篇文章
 
 ### 方式 2：直接创建已发布文章
 
@@ -131,16 +131,22 @@ GitHub Pages 会自动构建并发布，首页会自动显示新文章。
 - `_config.yml`：Jekyll 配置
 - `_layouts/default.html`：全站布局
 - `_layouts/post.html`：文章页布局
+- `_layouts/project.html` / `_layouts/photo.html`：项目与摄影详情布局
 - `_drafts/`：草稿目录
 - `_posts/`：Markdown 文章目录
+- `_projects/`：项目集合
+- `_photography/`：摄影作品集合
 - `POST_TEMPLATE.md`：在线发文模板
 - `ONLINE_PUBLISH.md`：GitHub 网页发文说明
-- `index.html`：首页，会自动读取文章列表
+- `index.html`：个人主页，展示精选文章、项目和摄影
+- `articles.html`：文章栏目页
+- `projects.html`：项目栏目页
+- `photography.html`：摄影栏目页
 - `tools/new-post.ps1`：新建草稿或直接发布文章
 - `tools/publish-post.ps1`：把草稿手动发布到 `_posts`
 - `.github/workflows/pages.yml`：GitHub Pages 自动/手动部署
-- `styles.css`：样式
-- `script.js`：主题切换、筛选、滚动进度条
+- `styles.scss` + `_sass/`：分层样式
+- `assets/js/`：模块化脚本（主题、筛选、目录、分页等）
 
 ## 本地预览
 

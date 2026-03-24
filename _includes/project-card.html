@@ -1,6 +1,6 @@
 <article class="project-card card">
   <div class="card-meta">
-    <span class="status-badge status-badge--{{ include.project.status | downcase | replace: ' ', '-' }}">{{ include.project.status }}</span>
+    <span class="status-badge" data-status="{{ include.project.status }}">{{ include.project.status }}</span>
     {% if include.project.period %}
     <span class="meta-chip">{{ include.project.period }}</span>
     {% endif %}
