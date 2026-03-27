@@ -1,5 +1,5 @@
 title: YMZ Blog
-description: 记录医学图像、工程实践与摄影创作的个人站点。
+description: 整理医学图像、工程和摄影内容的个人站点。
 lang: zh-CN
 timezone: Asia/Shanghai
 future: true
@@ -35,15 +35,15 @@ defaults:
       page_id: photo
 author:
   name: YMZ
-  role: 医学图像 / 工程实践 / 摄影记录
-  bio: 这里主要写我在做的 CBCT / pseudo CT、工程搭建和摄影记录。内容不追求面面俱到，更像一份一直在补的个人工作笔记。
+  role: 医学图像 / 工程 / 摄影
+  bio: 这里主要放我在做的医学图像、工程项目和摄影记录。
   location: China
   github: https://github.com/YMZ1998
-  intro: 这个站点用来放项目、文章和摄影。分成几个栏目，只是想让自己以后回头找东西时更清楚一点。
+  intro: 这个站点用来整理项目、文章和照片，方便以后回头看。
 focus_areas:
   - title: CBCT 与 pseudo CT
-    description: 主要关注 CBCT 到 pseudo CT 这条线，包括数据、训练、重建和结果判断这些具体问题。
+    description: 记录数据、训练、重建和结果。
   - title: 工程结构与工具链
-    description: 也会记一些工程上的东西，比如模板、工具链、可视化和代码怎么组织，免得项目越做越乱。
-  - title: 摄影与视觉表达
-    description: 摄影这部分先当作另一种记录方式，拍城市、路上看到的景和一些让我停下来的光线。
+    description: 记录项目结构、脚本和工具使用。
+  - title: 摄影与记录
+    description: 放一些照片，也记一点拍摄想法。
