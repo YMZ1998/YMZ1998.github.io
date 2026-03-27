@@ -22,11 +22,11 @@ page_id: home
     <li>尽量把过程写清楚</li>
   </ul>
   {% endcapture %}
-  {% include content-hero.html eyebrow="YMZ · Personal Site" title="把医学图像、工程和摄影放在一起整理" copy=site.author.bio actions=hero_actions side=hero_side %}
+  {% include content-hero.html eyebrow="YMZ · Personal Site" title="仰观宇宙之大，俯察品类之盛" copy=site.author.bio actions=hero_actions side=hero_side %}
 
   <section class="section">
     <div class="container">
-      {% include section-heading.html eyebrow="Current Focus" title="最近在做什么" copy="主要就是这三块。" %}
+      {% include section-heading.html eyebrow="Current Focus" title="纸上得来终觉浅，绝知此事要躬行" copy="主要就是这三块。" %}
       <div class="focus-grid">
         {% for area in site.focus_areas %}
         <article class="focus-card card">
@@ -42,13 +42,13 @@ page_id: home
   {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
   {% assign featured_photos = site.photography | where: "featured", true | sort: "order" %}
 
-  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="先看这几篇" copy="先放几篇比较能代表当前方向的文章。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
-  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="正在做的项目" copy="这里是最近还在持续推进的内容。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
-  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="最近放上来的照片" copy="先放一些图，后面再慢慢补完整。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
+  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="读书破万卷，下笔如有神" copy="先放几篇比较能代表当前方向的文章。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
+  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="路漫漫其修远兮，吾将上下而求索" copy="这里是最近还在持续推进的内容。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
+  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="山光悦鸟性，潭影空人心" copy="先放一些图，后面再慢慢补完整。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
 
   <section class="section muted-section">
     <div class="container">
-      {% include section-heading.html eyebrow="Contact / Navigation" title="往下看" copy="想看具体内容，可以直接进文章、项目或摄影页。" %}
+      {% include section-heading.html eyebrow="Contact / Navigation" title="欲穷千里目，更上一层楼" copy="想看具体内容，可以直接进文章、项目或摄影页。" %}
       <div class="hub-grid">
         <article class="hub-card card">
           <span class="post-tag">Articles</span>
