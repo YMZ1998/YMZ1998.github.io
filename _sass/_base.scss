@@ -27,8 +27,11 @@
   --radius-lg: 24px;
   --radius-md: 18px;
   --radius-sm: 999px;
-  --container: min(1180px, calc(100vw - 32px));
+  --container: min(1200px, calc(100vw - 32px));
   --transition: 220ms ease;
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --font-serif: "Source Han Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas, monospace;
 }
 
 html[data-theme="dark"] {
@@ -69,14 +72,17 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  line-height: 1.7;
+  font-family: var(--font-sans);
+  line-height: 1.72;
   color: var(--text);
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--primary) 12%, transparent), transparent 36%),
     radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 10%, transparent), transparent 31%),
     linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 44%, transparent), transparent 20%),
     var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition), color var(--transition);
 }
 
@@ -96,7 +102,7 @@ button,
 }
 
 code {
-  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-family: var(--font-mono);
 }
 
 h1,
@@ -108,4 +114,12 @@ ul,
 ol,
 dl {
   margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
 }
