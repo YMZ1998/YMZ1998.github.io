@@ -29,8 +29,9 @@
   --radius-sm: 999px;
   --container: min(1200px, calc(100vw - 32px));
   --transition: 220ms ease;
-  --font-sans: "PingFang SC", "Hiragino Sans GB", "HarmonyOS Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
-  --font-serif: "Source Han Serif SC", "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", serif;
+  --font-rounded: "HarmonyOS Sans SC", "M PLUS Rounded 1c", "Nunito", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "YouYuan", "Arial Rounded MT Bold", sans-serif;
+  --font-sans: var(--font-rounded);
+  --font-serif: var(--font-rounded);
   --font-mono: "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas, monospace;
 }
 
@@ -121,5 +122,5 @@ h2,
 h3,
 h4 {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 700;
 }
