@@ -1,6 +1,6 @@
-# Post Template
+# 文章模板
 
-把这个文件内容复制到 `D:\code\YMZ1998.github.io\_posts\YYYY-MM-DD-your-title.md`，然后按需修改。
+把这个文件内容复制到 `_posts/YYYY-MM-DD-your-title.md`，然后按需修改。
 
 ```md
 ---
@@ -33,6 +33,6 @@ description: 这里填写页面描述。
 
 ## 文件命名
 
-- 必须放在 `D:\code\YMZ1998.github.io\_posts\`
+- 必须放在 `_posts/`
 - 文件名格式必须是：`YYYY-MM-DD-title.md`
 - 例如：`2026-03-24-my-first-web-post.md`

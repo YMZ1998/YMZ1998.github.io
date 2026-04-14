@@ -16,7 +16,7 @@ function Convert-ToSlug {
     $slug = $slug.Trim('-')
 
     if ([string]::IsNullOrWhiteSpace($slug)) {
-        throw "Cannot build a slug for this draft."
+        throw "无法为这个草稿生成 slug。"
     }
 
     return $slug
@@ -37,12 +37,12 @@ $draftPath = if (Test-Path $Draft) {
 }
 
 if (-not (Test-Path $draftPath)) {
-    throw "Draft file not found: $Draft"
+    throw "未找到草稿文件：$Draft"
 }
 
 $content = [System.IO.File]::ReadAllText($draftPath, [System.Text.Encoding]::UTF8)
 if (-not $content.StartsWith("---")) {
-    throw "Draft is missing front matter: $draftPath"
+    throw "草稿缺少 front matter：$draftPath"
 }
 
 $titleMatch = [regex]::Match($content, "(?m)^title:\s*['""]?(.*?)['""]?\s*$")
@@ -65,11 +65,11 @@ if (-not (Test-Path $postsDir)) {
 
 $targetPath = Join-Path $postsDir ("{0}-{1}.md" -f $Date.ToString("yyyy-MM-dd"), $slugBase)
 if (Test-Path $targetPath) {
-    throw "Published post already exists: $targetPath"
+    throw "已存在同名已发布文章：$targetPath"
 }
 
 [System.IO.File]::WriteAllText($targetPath, $updatedContent, [System.Text.UTF8Encoding]::new($false))
 Remove-Item $draftPath
 
-Write-Host "Published post: $targetPath"
-Write-Host "Removed draft: $draftPath"
+Write-Host "已发布文章：$targetPath"
+Write-Host "已删除草稿：$draftPath"

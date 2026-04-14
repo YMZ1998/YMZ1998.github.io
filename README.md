@@ -10,8 +10,8 @@
 
 - 打开仓库 [https://github.com/YMZ1998/YMZ1998.github.io](https://github.com/YMZ1998/YMZ1998.github.io)
 - 进入 `_posts` 目录在线创建文章
-- 模板文件：`D:\code\YMZ1998.github.io\POST_TEMPLATE.md:1`
-- 在线发文说明：`D:\code\YMZ1998.github.io\ONLINE_PUBLISH.md:1`
+- 模板文件：`POST_TEMPLATE.md`
+- 在线发文说明：`ONLINE_PUBLISH.md`
 
 推荐流程：
 
@@ -32,7 +32,7 @@
 powershell -ExecutionPolicy Bypass -File .\tools\new-post.ps1 -Title "我的新文章" -Topic "开发" -Summary "这里写摘要" -Description "这里写描述"
 ```
 
-这会在 `D:\code\YMZ1998.github.io\_drafts\` 下生成一个 Markdown 草稿。
+这会在 `_drafts/` 下生成一个 Markdown 草稿。
 
 写完后手动发布：
 
@@ -48,7 +48,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\publish-post.ps1 -Draft "wo-de-
 
 发布后脚本会：
 
-- 自动把草稿移动到 `D:\code\YMZ1998.github.io\_posts\`
+- 自动把草稿移动到 `_posts/`
 - 自动补成 `YYYY-MM-DD-title.md`
 - 自动更新时间
 - 文章栏目会自动读取这篇文章
@@ -63,7 +63,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\new-post.ps1 -Title "我的新�
 
 ## 手动新建 Markdown 文件
 
-你也可以直接在 `D:\code\YMZ1998.github.io\_posts\` 目录新建一个 Markdown 文件，文件名必须符合：
+你也可以直接在 `_posts/` 目录新建一个 Markdown 文件，文件名必须符合：
 
 ```text
 YYYY-MM-DD-title.md
@@ -117,7 +117,7 @@ GitHub Pages 会自动构建并发布，首页会自动显示新文章。
 
 ## 手动部署
 
-仓库里新增了 GitHub Actions 工作流：`D:\code\YMZ1998.github.io\.github\workflows\pages.yml:1`
+仓库里新增了 GitHub Actions 工作流：`.github/workflows/pages.yml`
 
 它支持两种方式：
 
@@ -147,6 +147,12 @@ GitHub Pages 会自动构建并发布，首页会自动显示新文章。
 - `.github/workflows/pages.yml`：GitHub Pages 自动/手动部署
 - `styles.scss` + `_sass/`：分层样式
 - `assets/js/`：模块化脚本（主题、筛选、目录、分页等）
+
+## 维护建议
+
+- 文章正式发布统一放在 `_posts/`
+- 临时内容先放 `_drafts/`
+- Jekyll 构建产物和缓存不要提交，仓库已经通过 `.gitignore` 忽略
 
 ## 本地预览
 

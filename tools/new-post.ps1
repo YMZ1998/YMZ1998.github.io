@@ -2,11 +2,11 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$Title,
 
-    [string]$Topic = "dev",
+    [string]$Topic = "开发",
 
-    [string]$Summary = "Add a short summary here.",
+    [string]$Summary = "这里写一段简短摘要。",
 
-    [string]$Description = "Add a page description here.",
+    [string]$Description = "这里写页面描述。",
 
     [switch]$Publish,
 
@@ -46,7 +46,7 @@ $fileName = if ($Publish) {
 $targetPath = Join-Path $targetDir $fileName
 
 if (Test-Path $targetPath) {
-    throw "File already exists: $targetPath"
+    throw "文件已存在：$targetPath"
 }
 
 if (-not (Test-Path $targetDir)) {
@@ -65,25 +65,25 @@ layout: post
 title: '$safeTitle'
 date: $dateString
 topic: '$safeTopic'
-read_time: '5 min'
+read_time: '5 分钟'
 summary: '$safeSummary'
 description: '$safeDescription'
 ---
 
-## Section Title
+## 第一节
 
-Start writing here.
+这里开始写正文。
 
-- Key point one
-- Key point two
+- 要点一
+- 要点二
 
-> Add an important quote here.
+> 这里可以补一句重点说明。
 "@
 
 [System.IO.File]::WriteAllText($targetPath, $content, [System.Text.UTF8Encoding]::new($false))
-Write-Host "Created post file: $targetPath"
+Write-Host "已创建文章文件：$targetPath"
 if ($Publish) {
-    Write-Host "Status: published directly to _posts"
+    Write-Host "状态：已直接发布到 _posts/"
 } else {
-    Write-Host "Status: draft created in _drafts"
+    Write-Host "状态：已在 _drafts/ 中创建草稿"
 }
