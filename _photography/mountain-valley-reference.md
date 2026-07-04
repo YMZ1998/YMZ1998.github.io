@@ -1,7 +1,7 @@
 ---
 title: 山谷层峦
-summary: 用这张山谷参考图先把摄影页里的地貌内容补上。
-category: 风景参考
+summary: 山谷与层峦关系的视觉参考，适合观察空间纵深、地貌纹理和远近层次。
+category: 视觉参考
 cover: /assets/photography/mountain-valley.jpg
 shoot_date: 2026-03-24
 order: 2
@@ -17,10 +17,10 @@ source_url: https://commons.wikimedia.org/wiki/File:Mountain_Valley.jpg
 license: CC0 / Public Domain
 ---
 
-这张图也是先拿来补页面内容的，作用很简单：让摄影页别只有空结构，同时把来源和授权说明写清楚。
+这张图来自公开授权图库，不是我的原创拍摄。它适合作为地貌观察的参考：前景、中景和远山之间的层次清楚，也能提醒我在整理风景照片时关注空间关系，而不只是单个主体。
 
 ## 备注
 
-- 用途：站点摄影栏目视觉补充
+- 用途：地貌层次与空间关系参考
 - 来源：Wikimedia Commons
 - 授权：CC0 / Public Domain

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: YMZ Blog | 个人主页
-description: 记录医学图像研究、工程实践与摄影观察的个人博客。
+description: 医学图像、工程实践、写作复盘与视觉观察的长期记录。
 page_id: home
 ---
 <main class="home-main">
@@ -41,11 +41,11 @@ page_id: home
   </a>
   {% endif %}
   {% endcapture %}
-  {% include content-hero.html title="记录研究、工程实践与长期学习" copy=site.author.bio actions=hero_actions side=hero_side %}
+  {% include content-hero.html title="把研究、工程和观察写成可复盘的记录" copy=site.author.bio actions=hero_actions side=hero_side %}
 
   <section class="section">
     <div class="container">
-      {% include section-heading.html eyebrow="Focus" title="长期整理的主题" copy="这个博客围绕研究过程、工程复盘和视觉记录持续积累，尽量把判断依据和实践细节写清楚。" %}
+      {% include section-heading.html eyebrow="Focus" title="长期整理的主题" copy="我会优先记录能被复查、能被复用、能帮助后续判断的内容，而不是只留下最终结果。" %}
       <div class="focus-grid">
         {% for area in site.focus_areas %}
         <article class="focus-card card">
@@ -61,30 +61,30 @@ page_id: home
   {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
   {% assign featured_photos = site.photography | where: "featured", true | sort: "order" %}
 
-  {% include featured-section.html section_id="home-articles" eyebrow="Writing" title="精选文章" copy="技术记录、部署笔记和阶段性总结会优先整理到这里。" action_href="/articles/" action_label="全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
-  {% include featured-section.html section_id="home-projects" eyebrow="Projects" title="项目札记" copy="把持续推进的实验线、工具和工程结构独立归档，方便复盘。" action_href="/projects/" action_label="全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
-  {% include featured-section.html section_id="home-photography" eyebrow="Photography" title="摄影观察" copy="保留一些照片和视觉记录，让站点不只是一组技术笔记。" action_href="/photography/" action_label="全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
+  {% include featured-section.html section_id="home-articles" eyebrow="Writing" title="精选文章" copy="这里会保留研究笔记、部署记录、实验复盘和一些值得回看的判断。" action_href="/articles/" action_label="全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
+  {% include featured-section.html section_id="home-projects" eyebrow="Projects" title="项目札记" copy="项目页更像工作记录：保留目标、边界、阶段进展和后续准备补齐的部分。" action_href="/projects/" action_label="全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
+  {% include featured-section.html section_id="home-photography" eyebrow="Photography" title="视觉观察" copy="摄影栏目先作为视觉参考和观察记录，后续逐步补充更多原创拍摄与说明。" action_href="/photography/" action_label="全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
 
   <section class="section muted-section">
     <div class="container">
-      {% include section-heading.html eyebrow="Navigation" title="从这里继续浏览" copy="如果只想快速定位内容，可以直接进入文章、项目或摄影索引。" %}
+      {% include section-heading.html eyebrow="Navigation" title="从这里继续浏览" copy="按内容类型进入对应索引：文章看过程，项目看结构，摄影看观察。" %}
       <div class="hub-grid">
         <article class="hub-card card">
           <span class="post-tag">Articles</span>
           <h3>文章</h3>
-          <p>技术记录、部署过程、实验过程和一些阶段性总结。</p>
+          <p>研究笔记、工程记录、部署过程和阶段性复盘。</p>
           <a class="text-link" href="{{ '/articles/' | relative_url }}">进入文章页</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Projects</span>
           <h3>项目</h3>
-          <p>把正在做的项目单独整理出来，保留结构和关键决策。</p>
+          <p>把长期项目单独归档，保留目标、结构和关键取舍。</p>
           <a class="text-link" href="{{ '/projects/' | relative_url }}">进入项目页</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Photography</span>
           <h3>摄影</h3>
-          <p>照片、场景和一些视觉表达上的观察。</p>
+          <p>视觉参考、场景观察，以及后续逐步补充的原创记录。</p>
           <a class="text-link" href="{{ '/photography/' | relative_url }}">进入摄影页</a>
         </article>
       </div>

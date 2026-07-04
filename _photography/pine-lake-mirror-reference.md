@@ -1,7 +1,7 @@
 ---
 title: 松湖静镜
-summary: 这张松林与湖面的参考图适合补充更安静、克制一点的风景氛围。
-category: 风景参考
+summary: 松林、湖面和倒影的视觉参考，用来观察安静画面中的对称、留白和色彩克制。
+category: 视觉参考
 cover: /assets/photography/pine-lake-mirror.jpg
 shoot_date: 2026-03-25
 order: 6
@@ -17,11 +17,11 @@ source_url: https://unsplash.com/photos/body-of-water-surrounded-by-pine-trees-d
 license: Unsplash License
 ---
 
-这张图先放进来当作静态风景参考，让摄影页除了山地和公路之外，也多一点湖面与林地的节奏。它不是我的原创作品。
+这张图来自公开授权图库，不是我的原创拍摄。它适合作为安静风景的参考：湖面倒影让画面接近对称，松林和天空之间的颜色很克制，整体节奏比山地、公路或海岸题材更慢。
 
 ## 备注
 
-- 用途：站点摄影栏目视觉补充
+- 用途：倒影、留白和低饱和风景参考
 - 摄影师：Luca Bravo
 - 来源：Unsplash
 - 授权：Unsplash License

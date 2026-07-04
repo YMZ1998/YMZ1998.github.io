@@ -1,14 +1,14 @@
 ---
 layout: default
 title: YMZ Blog | 项目
-description: 长期维护项目、实验线与工程工具的整理页。
+description: 长期项目、实验线、工程工具与阶段性进展整理页。
 permalink: /projects/
 page_id: projects
 ---
 <main class="page-main">
   <section class="section">
     <div class="container">
-      {% include section-heading.html level="h1" eyebrow="Projects" title="项目札记" copy="这里整理长期维护的实验线、工程工具和学习型项目，重点保留目标、结构和阶段进展。" %}
+      {% include section-heading.html level="h1" eyebrow="Projects" title="项目札记" copy="这里不只放仓库入口，也记录每条实验线的目标、工程边界、当前状态和后续准备补齐的问题。" %}
 
       {% assign sorted_projects = site.projects | sort: "order" %}
       <div class="project-grid">

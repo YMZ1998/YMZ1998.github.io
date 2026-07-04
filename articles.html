@@ -1,7 +1,7 @@
 ---
 layout: default
 title: YMZ Blog | 文章
-description: 技术记录、实验笔记、工程复盘和长期学习文章。
+description: 研究笔记、工程记录、日报归档与阶段性复盘文章。
 permalink: /articles/
 page_id: articles
 ---
@@ -13,7 +13,7 @@ page_id: articles
           <div class="listing-sidebar-copy">
             <span class="article-kicker">Archive</span>
             <h2>文章归档</h2>
-            <p>按时间和主题快速定位研究笔记、工程记录和阶段性总结。</p>
+            <p>按时间和主题浏览研究笔记、工程记录、日报归档和阶段性复盘。</p>
           </div>
           <div class="listing-sidebar-meta">
             <span class="meta-chip">{{ site.posts | size }} 篇文章</span>
@@ -36,7 +36,7 @@ page_id: articles
             {% endfor %}
           </div>
           {% endcapture %}
-          {% include section-heading.html level="h1" eyebrow="Writing" title="文章归档" copy="这里放技术记录、部署笔记、实验复盘，以及项目推进过程中值得留下来的判断。" controls=article_filters %}
+          {% include section-heading.html level="h1" eyebrow="Writing" title="文章归档" copy="文章会分成两类：一类是长期可复查的研究与工程记录，另一类是按日期沉淀的信息简报。" controls=article_filters %}
 
           <div class="post-grid articles-grid">
             {% for post in site.posts %}
@@ -45,7 +45,7 @@ page_id: articles
             <article class="post-card card empty-posts">
               <span class="post-tag">暂无文章</span>
               <h3>内容整理中</h3>
-              <p>新文章发布后会显示在这里。</p>
+            <p>后续的研究笔记、工程记录和复盘文章会显示在这里。</p>
             </article>
             {% endfor %}
           </div>

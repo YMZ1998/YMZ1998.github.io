@@ -1,7 +1,7 @@
 ---
 title: 雪野静线
-summary: 加一张雪地风景参考图，让摄影页里多出冷调、安静、层次更简洁的一组画面。
-category: 风景参考
+summary: 雪地风景的视觉参考，用来观察冷调画面、低对比层次和简洁构图。
+category: 视觉参考
 cover: /assets/photography/snow-landscape-reference.jpg
 shoot_date: 2026-03-27
 order: 9
@@ -17,10 +17,10 @@ source_url: https://commons.wikimedia.org/wiki/File:Snow_landscape.jpg
 license: CC0 / Public Domain
 ---
 
-这张图同样先作为公开授权参考图加入摄影栏目，用来补足更安静、冷色调的自然场景。它不是我的原创拍摄作品，而是当前阶段用于完善摄影页题材分布的参考内容。
+这张图来自公开授权图库，不是我的原创拍摄。它适合作为冷调风景的参考：雪地降低了画面信息密度，层次更轻，构图也更依赖线条和明暗变化。
 
 ## 备注
 
-- 用途：站点摄影栏目视觉补充
+- 用途：冷调风景、低对比层次和简洁构图参考
 - 来源：Wikimedia Commons
 - 授权：CC0 / Public Domain

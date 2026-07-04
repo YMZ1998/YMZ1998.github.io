@@ -1,7 +1,7 @@
 ---
 layout: default
-title: YMZ Blog | 摄影
-description: 摄影作品索引与独立作品详情页。
+title: YMZ Blog | 视觉观察
+description: 视觉参考、场景观察与摄影记录索引页。
 permalink: /photography/
 page_id: photography
 ---
@@ -15,7 +15,7 @@ page_id: photography
         <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
       </div>
       {% endcapture %}
-      {% include section-heading.html level="h1" eyebrow="Photography" title="摄影观察" copy="照片放在这里作为长期视觉记录，也记录一些构图、场景和观看方式。" controls=photo_controls %}
+      {% include section-heading.html level="h1" eyebrow="Photography" title="视觉观察" copy="这一栏目前以公开授权素材作为视觉参考，记录构图、光线、场景和观看方式；后续会逐步补充原创拍摄。" controls=photo_controls %}
 
       {% assign sorted_photos = site.photography | sort: "order" %}
       <div class="photo-grid" data-photo-gallery>
