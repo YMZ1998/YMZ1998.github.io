@@ -15,21 +15,12 @@ body[data-page="articles"] .articles-section {
 
 body[data-page="articles"] .articles-section::before,
 body[data-page="post"] .article-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: min(30vw, 320px);
-  height: min(30vw, 320px);
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 11%, transparent), transparent 72%);
-  filter: blur(10px);
-  opacity: 0.72;
-  pointer-events: none;
+  content: none;
 }
 
 .article-layout {
   display: grid;
-  grid-template-columns: clamp(240px, 20vw, 320px) minmax(0, 980px) clamp(240px, 19vw, 300px);
+  grid-template-columns: clamp(230px, 18vw, 300px) minmax(0, 880px) clamp(220px, 17vw, 280px);
   gap: clamp(20px, 2vw, 32px);
   align-items: start;
   justify-content: center;
@@ -89,9 +80,7 @@ body[data-page="articles"] .listing-sidebar--articles {
   padding: 30px 24px 24px;
   top: 96px;
   max-height: calc(100vh - 128px);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 97%, transparent), color-mix(in srgb, var(--surface-subtle) 94%, transparent)),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -99,7 +88,7 @@ body[data-page="articles"] .listing-sidebar--articles {
   margin: 10px 0 0;
   line-height: 1.15;
   font-size: clamp(1.4rem, 2vw, 1.75rem);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .listing-sidebar-copy p {
@@ -175,7 +164,7 @@ body[data-page="articles"] .listing-main > .section-heading {
 
 body[data-page="articles"] .listing-main > .section-heading h1,
 body[data-page="post"] .article-header h1 {
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
@@ -208,9 +197,7 @@ body[data-page="post"] .article-header {
   padding: clamp(28px, 3vw, 36px);
   border: 1px solid color-mix(in srgb, var(--line) 92%, transparent);
   border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 98%, transparent), color-mix(in srgb, var(--surface-subtle) 92%, transparent)),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -231,9 +218,7 @@ body[data-page="post"] .article-lead {
 body[data-page="post"] .article-content {
   padding: clamp(30px, 2.8vw, 42px);
   border-color: color-mix(in srgb, var(--line) 92%, transparent);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 98%, transparent), color-mix(in srgb, var(--surface-subtle) 92%, transparent)),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -247,7 +232,7 @@ body[data-page="post"] .article-content {
 
 body[data-page="post"] .article-content h2,
 body[data-page="post"] .article-content h3 {
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 body[data-page="post"] .article-content h2 {
@@ -271,6 +256,13 @@ body[data-page="post"] .article-content h3 {
 .detail-prose pre,
 .detail-prose blockquote {
   margin: 16px 0;
+}
+
+body[data-page="post"] .article-content p,
+body[data-page="post"] .article-content ul,
+body[data-page="post"] .article-content ol,
+body[data-page="post"] .article-content blockquote {
+  max-width: 74ch;
 }
 
 .article-content ul,
@@ -338,10 +330,8 @@ body[data-page="post"] .article-content a:focus-visible {
   min-width: 0;
   padding: 18px 20px;
   border: 1px solid color-mix(in srgb, var(--line) 92%, transparent);
-  border-radius: 22px;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 98%, transparent), color-mix(in srgb, var(--surface-subtle) 94%, transparent)),
-    var(--surface);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
 
@@ -410,8 +400,7 @@ body[data-page="articles"] .articles-grid .post-card:focus-within {
 
 body[data-page="articles"] .articles-grid .post-card.is-featured {
   background:
-    linear-gradient(140deg, color-mix(in srgb, var(--primary) 8%, transparent), transparent 52%),
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 98%, transparent), color-mix(in srgb, var(--surface-subtle) 92%, transparent)),
+    linear-gradient(140deg, color-mix(in srgb, var(--primary) 6%, transparent), transparent 54%),
     var(--surface);
 }
 
@@ -617,7 +606,7 @@ body[data-page="articles"] .articles-filters .filter {
   max-height: calc(100vh - 32px);
   padding: 18px;
   border: 1px solid color-mix(in srgb, var(--line-strong) 70%, var(--line));
-  border-radius: 28px;
+  border-radius: var(--radius-xl);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-raised) 86%, transparent), color-mix(in srgb, var(--surface-subtle) 80%, transparent)),
     color-mix(in srgb, var(--surface-solid) 70%, transparent);
@@ -761,6 +750,31 @@ body.is-lightbox-open {
   }
 }
 
+@media (max-width: 1440px) and (min-width: 1101px) {
+  .article-shell {
+    width: min(1120px, calc(100vw - 40px));
+  }
+
+  .article-layout {
+    grid-template-columns: minmax(0, 820px) minmax(220px, 260px);
+    gap: 24px;
+  }
+
+  .article-sidebar--left {
+    display: none;
+  }
+
+  .article-mobile-panels {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .article-timeline-mobile {
+    display: block;
+  }
+}
+
 @media (max-width: 820px) {
   .article-layout {
     grid-template-columns: 1fr;
@@ -839,7 +853,7 @@ body.is-lightbox-open {
   .lightbox-dialog {
     width: min(100vw - 16px, 100%);
     padding: 14px;
-    border-radius: 22px;
+    border-radius: var(--radius-lg);
   }
 
   .lightbox-toolbar {

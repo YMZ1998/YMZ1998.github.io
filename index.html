@@ -1,32 +1,51 @@
 ---
 layout: default
 title: YMZ Blog | 个人主页
-description: 个人主页，整理医学图像、工程和摄影内容。
+description: 记录医学图像研究、工程实践与摄影观察的个人博客。
 page_id: home
 ---
 <main class="home-main">
+  {% assign latest_post = site.posts | first %}
+  {% assign post_count = site.posts | size %}
+  {% assign project_count = site.projects | size %}
+  {% assign photo_count = site.photography | size %}
   {% capture hero_actions %}
-  <a class="button primary" href="{{ '/articles/' | relative_url }}">查看文章</a>
-  <a class="button ghost" href="{{ '/projects/' | relative_url }}">浏览项目</a>
-  <a class="button ghost" href="{{ '/photography/' | relative_url }}">进入摄影</a>
+  <a class="button primary" href="{{ '/articles/' | relative_url }}">阅读文章</a>
+  <a class="button ghost" href="{{ '/projects/' | relative_url }}">查看项目</a>
+  <a class="button ghost" href="{{ site.author.github }}" target="_blank" rel="noreferrer">GitHub</a>
   {% endcapture %}
   {% capture hero_side %}
   <div class="home-hero-panel-copy">
-    <p class="panel-label">关于本站</p>
+    <p class="panel-label">作者档案</p>
     <h2>{{ site.author.role }}</h2>
     <p class="panel-text">{{ site.author.intro }}</p>
   </div>
-  <ul class="check-list home-hero-points">
-    <li>首页只放入口</li>
-    <li>内容会慢慢补</li>
-    <li>尽量把过程写清楚</li>
-  </ul>
+  <dl class="profile-facts">
+    <div>
+      <dt>文章</dt>
+      <dd>{{ post_count }}</dd>
+    </div>
+    <div>
+      <dt>项目</dt>
+      <dd>{{ project_count }}</dd>
+    </div>
+    <div>
+      <dt>摄影</dt>
+      <dd>{{ photo_count }}</dd>
+    </div>
+  </dl>
+  {% if latest_post %}
+  <a class="latest-note" href="{{ latest_post.url | relative_url }}">
+    <span>最新文章</span>
+    <strong>{{ latest_post.title }}</strong>
+  </a>
+  {% endif %}
   {% endcapture %}
-  {% include content-hero.html eyebrow="YMZ · Personal Site" title="仰观宇宙之大，俯察品类之盛" copy=site.author.bio actions=hero_actions side=hero_side %}
+  {% include content-hero.html title="记录研究、工程实践与长期学习" copy=site.author.bio actions=hero_actions side=hero_side %}
 
   <section class="section">
     <div class="container">
-      {% include section-heading.html eyebrow="Current Focus" title="纸上得来终觉浅，绝知此事要躬行" copy="主要就是这三块。" %}
+      {% include section-heading.html eyebrow="Focus" title="长期整理的主题" copy="这个博客围绕研究过程、工程复盘和视觉记录持续积累，尽量把判断依据和实践细节写清楚。" %}
       <div class="focus-grid">
         {% for area in site.focus_areas %}
         <article class="focus-card card">
@@ -42,31 +61,31 @@ page_id: home
   {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
   {% assign featured_photos = site.photography | where: "featured", true | sort: "order" %}
 
-  {% include featured-section.html section_id="home-articles" eyebrow="Selected Writing" title="读书破万卷，下笔如有神" copy="先放几篇比较能代表当前方向的文章。" action_href="/articles/" action_label="查看全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
-  {% include featured-section.html section_id="home-projects" eyebrow="Selected Projects" title="路漫漫其修远兮，吾将上下而求索" copy="这里是最近还在持续推进的内容。" action_href="/projects/" action_label="查看全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
-  {% include featured-section.html section_id="home-photography" eyebrow="Selected Photography" title="山光悦鸟性，潭影空人心" copy="先放一些图，后面再慢慢补完整。" action_href="/photography/" action_label="查看全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
+  {% include featured-section.html section_id="home-articles" eyebrow="Writing" title="精选文章" copy="技术记录、部署笔记和阶段性总结会优先整理到这里。" action_href="/articles/" action_label="全部文章" grid_class="post-grid" items=featured_posts kind="post" limit=3 %}
+  {% include featured-section.html section_id="home-projects" eyebrow="Projects" title="项目札记" copy="把持续推进的实验线、工具和工程结构独立归档，方便复盘。" action_href="/projects/" action_label="全部项目" grid_class="project-grid" items=featured_projects kind="project" limit=3 muted=true %}
+  {% include featured-section.html section_id="home-photography" eyebrow="Photography" title="摄影观察" copy="保留一些照片和视觉记录，让站点不只是一组技术笔记。" action_href="/photography/" action_label="全部作品" grid_class="photo-grid" items=featured_photos kind="photo" limit=3 %}
 
   <section class="section muted-section">
     <div class="container">
-      {% include section-heading.html eyebrow="Contact / Navigation" title="欲穷千里目，更上一层楼" copy="想看具体内容，可以直接进文章、项目或摄影页。" %}
+      {% include section-heading.html eyebrow="Navigation" title="从这里继续浏览" copy="如果只想快速定位内容，可以直接进入文章、项目或摄影索引。" %}
       <div class="hub-grid">
         <article class="hub-card card">
           <span class="post-tag">Articles</span>
           <h3>文章</h3>
-          <p>主要放技术记录、部署过程和一些阶段性总结。</p>
-          <a class="text-link" href="{{ '/articles/' | relative_url }}">进入文章页 →</a>
+          <p>技术记录、部署过程、实验过程和一些阶段性总结。</p>
+          <a class="text-link" href="{{ '/articles/' | relative_url }}">进入文章页</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Projects</span>
           <h3>项目</h3>
-          <p>把正在做的项目单独整理出来，方便回头查。</p>
-          <a class="text-link" href="{{ '/projects/' | relative_url }}">进入项目页 →</a>
+          <p>把正在做的项目单独整理出来，保留结构和关键决策。</p>
+          <a class="text-link" href="{{ '/projects/' | relative_url }}">进入项目页</a>
         </article>
         <article class="hub-card card">
           <span class="post-tag">Photography</span>
           <h3>摄影</h3>
-          <p>先放照片，后面再慢慢补说明和整理方式。</p>
-          <a class="text-link" href="{{ '/photography/' | relative_url }}">进入摄影页 →</a>
+          <p>照片、场景和一些视觉表达上的观察。</p>
+          <a class="text-link" href="{{ '/photography/' | relative_url }}">进入摄影页</a>
         </article>
       </div>
     </div>
