@@ -15,7 +15,7 @@ page_id: photography
         <button class="photo-page-button" type="button" data-photo-next aria-label="下一页">下一页 →</button>
       </div>
       {% endcapture %}
-      {% include section-heading.html level="h1" eyebrow="Photography" title="视觉观察" copy="这一栏目前以公开授权素材作为视觉参考，记录构图、光线、场景和观看方式；后续会逐步补充原创拍摄。" controls=photo_controls %}
+      {% include section-heading.html level="h1" eyebrow="Photography" title="视觉观察" copy="这一栏会放公开授权素材、生成式视觉练习和后续原创拍摄，用来记录构图、光线、场景和观看方式。" controls=photo_controls %}
 
       {% assign sorted_photos = site.photography | sort: "order" %}
       <div class="photo-grid" data-photo-gallery>
