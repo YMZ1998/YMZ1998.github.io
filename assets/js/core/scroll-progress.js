@@ -8,8 +8,8 @@ export function initScrollProgress() {
   const updateProgress = () => {
     const scrollTop = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const width = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
-    progressBar.style.width = `${width}%`;
+    const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+    progressBar.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
   };
 
   updateProgress();

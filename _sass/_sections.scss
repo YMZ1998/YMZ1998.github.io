@@ -39,6 +39,8 @@
 
 body[data-page="home"] .hero {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-top: 86px;
   padding-bottom: 16px;
 }
@@ -47,7 +49,36 @@ body[data-page="home"] .hero::before {
   content: none;
 }
 
+body[data-page="home"] .hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 42px;
+  left: 50%;
+  width: min(1200px, calc(100vw - 32px));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), var(--accent), transparent);
+  opacity: 0.52;
+  transform: translateX(-150%);
+  animation: hero-line 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes hero-line {
+  0%,
+  15% {
+    transform: translateX(-150%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(50%);
+  }
+}
+
 body[data-page="home"] .hero-grid {
+  position: relative;
+  z-index: 1;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.86fr);
   gap: clamp(30px, 3.6vw, 56px);
   align-items: center;
@@ -93,6 +124,20 @@ body[data-page="home"] .hero-panel {
   border-color: color-mix(in srgb, var(--line) 92%, var(--line-strong));
   background: var(--surface);
   box-shadow: var(--shadow-card);
+}
+
+body[data-page="home"] .hero-panel.motion-tilt.is-visible {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --glow-shift: 0px;
+  transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-2px);
+  box-shadow:
+    0 24px 54px rgba(17, 24, 39, 0.11),
+    var(--glow-shift) 0 24px color-mix(in srgb, var(--primary) 7%, transparent);
+  transition:
+    opacity 620ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    transform 180ms ease-out,
+    box-shadow 240ms ease;
 }
 
 body[data-page="home"] .hero-panel::before {
@@ -494,6 +539,13 @@ body[data-page="home"] .card-actions {
   min-height: 240px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 320ms ease;
+}
+
+.photo-card:hover .photo-image,
+.photo-card:focus-within .photo-image {
+  transform: scale(1.045);
+  filter: saturate(1.06) contrast(1.02);
 }
 
 .photo-overlay {

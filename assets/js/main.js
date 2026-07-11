@@ -2,6 +2,7 @@ import { initTheme } from "./core/theme.js";
 import { initMobileNav } from "./core/navigation.js";
 import { initScrollProgress } from "./core/scroll-progress.js";
 import { initYear } from "./core/year.js";
+import { initMotion } from "./core/motion.js";
 import { initPostFilters } from "./articles/filters.js";
 import { initArticleToc } from "./articles/toc.js";
 import { initArticleTimeline } from "./articles/timeline.js";
@@ -15,6 +16,7 @@ initTheme();
 initMobileNav();
 initScrollProgress();
 initYear();
+initMotion();
 
 if (page === "home") {
   initHomeFeatured();
